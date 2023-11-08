@@ -1,5 +1,7 @@
+DROP DATABASE IF EXISTS myride_transactional_db;
 CREATE DATABASE myride_transactional_db;
 
+DROP TABLE IF EXISTS user;
 CREATE TABLE user (
     user_id INT PRIMARY KEY,
     first_name VARCHAR(255),
@@ -13,6 +15,7 @@ CREATE TABLE user (
     rating INT     
 );
 
+DROP TABLE IF EXISTS vehicle;
 CREATE TABLE vehicle (
     vehicle_id INT PRIMARY KEY,
     licence_plate_num VARCHAR(255), ---> change on base of the mx lenght of plate
@@ -27,6 +30,7 @@ CREATE TABLE vehicle (
     wheelchair_seat INT -- 0 = no, 1 = yes
 );
 
+DROP TABLE IF EXISTS driver;
 CREATE TABLE driver (
     driver_id INT PRIMARY KEY,
     first_name VARCHAR(255),
@@ -47,6 +51,7 @@ CREATE TABLE driver (
     FOREIGN KEY (vehicle_id) REFERENCES vehicle(vehicle_id)
 );
 
+DROP TABLE IF EXISTS payment;
 CREATE TABLE payment (
     payment_id INT PRIMARY KEY,
     payment_type VARCHAR(5), -- cash, card, gift, mix
@@ -54,6 +59,7 @@ CREATE TABLE payment (
     promo_code VARCHAR(255)
 );
 
+DROP TABLE IF EXISTS ride;
 CREATE TABLE ride (
     ride_id INT PRIMARY KEY,
     driver_id INT,
@@ -73,6 +79,7 @@ CREATE TABLE ride (
     FOREIGN KEY (payment_id) REFERENCES payment(payment_id)
 );
 
+DROP TABLE IF EXISTS refused_rides;
 CREATE TABLE refused_rides (
     ride_id INT,
     driver_id INT,
