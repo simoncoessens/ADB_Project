@@ -12,7 +12,7 @@ CREATE TABLE costumer (
     phone_number VARCHAR(255), -- not INT as you want to specify the prefix (e.g. +39)
     passw VARCHAR(50), -- password max length: 50
     account_status VARCHAR(8), --disabled, active
-    rating INT     
+    rating INT
 );
 
 DROP TABLE IF EXISTS vehicle;
@@ -66,11 +66,11 @@ CREATE TABLE ride (
     user_id INT,
     -- ride_status VARCHAR(50),
     request_code INT,
-    route_to_pickup INT, --------------> CHECK AGAIN
-    route_to_dropoff INT, --------------> CHECK AGAIN    
+    route_to_pickup VARCHAR(255), --------------> CHECK AGAIN
+    route_to_dropoff VARCHAR(255), --------------> CHECK AGAIN
     request_date DATE,
-    pickup_date DATE,
-    dropoff_date DATE,
+    pickup_date TIMESTAMP WITHOUT TIME ZONE,
+    dropoff_date TIMESTAMP WITHOUT TIME ZONE,
     rating INT,
     payment_ID INT,
     passengers_num INT,
@@ -87,3 +87,11 @@ CREATE TABLE refused_rides (
     FOREIGN KEY (ride_id) REFERENCES ride(ride_id),
     FOREIGN KEY (driver_id) REFERENCES driver(driver_id)
 );
+
+
+-- TEST
+SELECT * FROM costumer;
+SELECT * FROM vehicle;
+SELECT * FROM driver;
+SELECT * FROM ride;
+SELECT * FROM refused_rides;
