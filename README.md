@@ -12,4 +12,5 @@ TODO for next time:
 - Maria: Azure, How to perform the benchmark for cloud?
 
 
-NEXT MEETING: 11:00 Tuesday 14 
+NEXT MEETING: 11:00 Tuesday 14
+- Valerio: okay for me
