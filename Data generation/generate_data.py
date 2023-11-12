@@ -3,6 +3,7 @@ from psycopg2 import extras
 from faker import Faker
 import random
 import csv
+import geopy
 fake = Faker()
 
 def generate_data(scale):
@@ -89,8 +90,10 @@ def generate_data(scale):
             'user_id': random.randint(1, scale),
             'ride_status': random.choice(['completed', 'cancelled', 'no_show']),
             'request_code': fake.random_int(min=10000, max=99999),
-            'route_to_pickup': fake.address(),
-            'route_to_dropoff': fake.address(),
+            'pickup_location_lat': random_coordinates_within_nyc_lat(),
+            'pickup_location_lon': random_coordinates_within_nyc_lon(),
+            'dropoff_location_lat': random_coordinates_within_nyc_lat(),
+            'dropoff_location_lon': random_coordinates_within_nyc_lon(),
             'request_date': fake.date_between(start_date="-1y", end_date="today"),
             'pickup_date': fake.date_time_this_year(before_now=True, after_now=False),
             'dropoff_date': fake.date_time_this_year(before_now=True, after_now=False),
@@ -122,6 +125,14 @@ def generate_data(scale):
         'HasRefusedRides': refused_rides_data
     }
 
+def random_coordinates_within_nyc_lat():
+    lat_min, lat_max = 40.477399, 40.917577
+    return random.uniform(lat_min, lat_max)
+
+def random_coordinates_within_nyc_lon():
+    lon_min, lon_max = -74.259090, -73.700272
+    return random.uniform(lon_min, lon_max)
+
 def write_data_to_csv(data_function, scale):
     # Generate the data using the provided function
     data = data_function(scale)
@@ -132,7 +143,7 @@ def write_data_to_csv(data_function, scale):
         'Vehicles': ('vehicles.csv', ['vehicle_id', 'licence_plate_num', 'manufacturer', 'model', 'manifacture_year', 'car_policy_num', 'car_type', 'fuel', 'seats_num', 'kids_seats_num', 'wheelchair_seat']),
         'Drivers': ('drivers.csv', ['driver_id', 'first_name', 'last_name', 'driver_status', 'date_of_birth', 'place_of_birth', 'place_of_residence', 'nationality', 'email', 'phone_number', 'licence_id', 'taxi_licence_id', 'rating', 'vehicle_id', 'join_date', 'passw']),
         'Payments': ('payments.csv', ['payment_id', 'payment_type', 'fare_amount', 'promo_code']),
-        'Rides': ('rides.csv', ['ride_id', 'driver_id', 'user_id', 'ride_status', 'request_code', 'route_to_pickup', 'route_to_dropoff', 'request_date', 'pickup_date', 'dropoff_date', 'ride_rating', 'payment_id', 'passengers_num']),
+        'Rides': ('rides.csv', ['ride_id', 'driver_id', 'user_id', 'ride_status', 'request_code', 'pickup_location_lat', 'pickup_location_lon','dropoff_location_lat', 'dropoff_location_lon', 'request_date', 'pickup_date', 'dropoff_date', 'ride_rating', 'payment_id', 'passengers_num']),
         'HasRefusedRides': ('refused_rides.csv', ['ride_id', 'driver_id'])
     }
 
@@ -190,4 +201,4 @@ def insert_data_to_db(host, dbname, user, password, port, data_function, scale):
 
 # Replace the 'your_generate_data' with your generate_data function name
 #insert_data_to_db('localhost', 'ADB_db', 'postgres', 'datamining', 5433, generate_data, 10)
-write_data_to_csv(generate_data, 10000)
+write_data_to_csv(generate_data, 100)
