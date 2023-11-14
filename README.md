@@ -32,5 +32,7 @@ TODO:
 1. Ask prof. Zimanyi about standard benchmarks
 2. Implement a dummy database with connection from python
 
+NEXT MEETING: Saturday 18 november 14:00 
+
 
 
