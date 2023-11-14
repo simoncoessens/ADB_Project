@@ -28,4 +28,9 @@ Microsoft Azure
 2. Try running some queries
 3. Decide the scale factors
 
+TODO: 
+1. Ask prof. Zimanyi about standard benchmarks
+2. Implement a dummy database with connection from python
+
+
 
