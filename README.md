@@ -17,13 +17,13 @@ NEXT MEETING: 11:00 Tuesday 14
 
 # MEETING 14 November
 
-*** Google Cloud ***
+** Google Cloud **
 STEPS: 
 1. Create the connection to the DB from python
 2. Try running some queries
 3. Decide the scale factors
 
-*** Microsoft Azure ***
+** Microsoft Azure **
 1. Create the connection to the DB from python
 2. Try running some queries
 3. Decide the scale factors
