@@ -156,49 +156,31 @@ def write_data_to_csv(data_function, scale):
 
     print('Data written to CSV files successfully.')
 
-def insert_data_to_db(host, dbname, user, password, port, data_function, scale):
+def copy_from_csv(table_name, csv_file_path):
     # Establish a connection to the database
     conn = psycopg2.connect(
-        dbname=dbname,
-        user=user,
-        password=password,
-        host=host,
-        port=port
+        dbname='ADB_db',
+        user='postgres',
+        password='datamining',
+        host='localhost',
+        port=5433
     )
     conn.autocommit = True
     cur = conn.cursor()
+    with open(csv_file_path, 'r') as f:
+        cur.copy_expert(f"COPY {table_name} FROM STDIN WITH CSV HEADER DELIMITER ','", f)
 
-    try:
-        # Call your data generation function
-        users_data, vehicles_data, drivers_data, payments_data, rides_data, refused_rides_data = data_function(scale)
+# Example Usage
 
-        # Define insert statements
-        insert_users = "INSERT INTO costumer VALUES %s"
-        insert_vehicles = "INSERT INTO vehicles VALUES %s"
-        insert_drivers = "INSERT INTO drivers VALUES %s"
-        insert_payments = "INSERT INTO payments VALUES %s"
-        insert_rides = "INSERT INTO rides VALUES %s"
-        insert_refused_rides = "INSERT INTO refused_rides VALUES %s"
+#write_data_to_csv(generate_data, 100)
 
-        # Execute insert statements
-        extras.execute_values(cur, insert_users, users_data)
-        extras.execute_values(cur, insert_vehicles, vehicles_data)
-        extras.execute_values(cur, insert_drivers, drivers_data)
-        extras.execute_values(cur, insert_payments, payments_data)
-        extras.execute_values(cur, insert_rides, rides_data)
-        extras.execute_values(cur, insert_refused_rides, refused_rides_data)
+# Usage
+# 1. Generate the data and write to csv with: write_data_to_csv(generate_data, 100)
+# 2. run copy_from_csv to push data to db, copy_from_csv( 'costumer', 'users.csv')
 
-        print("Data inserted successfully")
-
-    except Exception as e:
-        print("An error occurred:", e)
-        conn.rollback()
-
-    finally:
-        cur.close()
-        conn.close()
-
-
-# Replace the 'your_generate_data' with your generate_data function name
-#insert_data_to_db('localhost', 'ADB_db', 'postgres', 'datamining', 5433, generate_data, 10)
-write_data_to_csv(generate_data, 100)
+write_data_to_csv(generate_data, 10)
+copy_from_csv( 'costumer', 'users.csv')
+copy_from_csv( 'vehicle', 'vehicles.csv')
+copy_from_csv( 'driver', 'drivers.csv')
+copy_from_csv( 'payment', 'payments.csv')
+copy_from_csv( 'ride', 'rides.csv')
