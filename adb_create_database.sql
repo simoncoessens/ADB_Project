@@ -27,7 +27,7 @@ CREATE TABLE vehicle (
     fuel VARCHAR(8), -- diesel, electric, other
     seats_num INT,
     kids_seats_num INT,
-    wheelchair_seat INT -- 0 = no, 1 = yes
+    wheelchair_seat VARCHAR(8) -- 0 = no, 1 = yes
 );
 
 DROP TABLE IF EXISTS driver CASCADE;
@@ -64,10 +64,12 @@ CREATE TABLE ride (
     ride_id SERIAL PRIMARY KEY,
     driver_id INT,
     user_id INT,
-    -- ride_status VARCHAR(50),
+    ride_status VARCHAR(50),
     request_code INT,
-    route_to_pickup INT, --------------> CHECK AGAIN
-    route_to_dropoff INT, --------------> CHECK AGAIN    
+    pickup_location_lat FLOAT,
+    pickup_location_lon FLOAT,
+    dropoff_location_lat FLOAT,
+    dropoff_location_lon FLOAT,
     request_date DATE,
     pickup_date DATE,
     dropoff_date DATE,
