@@ -158,15 +158,22 @@ def write_data_to_csv(data_function, scale):
 
 def copy_from_csv(table_name, csv_file_path):
     # Establish a connection to the database
-    conn = psycopg2.connect(
-        dbname='ADB_db',
+    conn_g_cloud = psycopg2.connect(
+        dbname='myride_transactional_db',
         user='postgres',
-        password='datamining',
-        host='localhost',
-        port=5433
+        password='6x*i3MNUa*L6vRJYr#DJjsEufe7',
+        host='35.184.55.57',
+        port=5432
     )
-    conn.autocommit = True
-    cur = conn.cursor()
+    conn_azure = psycopg2.connect(
+        dbname='myride_transactional_db',
+        user='postgres',
+        password='',
+        host='',
+        port=5432
+    )
+    conn_g_cloud.autocommit = True
+    cur = conn_g_cloud.cursor()
     with open(csv_file_path, 'r') as f:
         cur.copy_expert(f"COPY {table_name} FROM STDIN WITH CSV HEADER DELIMITER ','", f)
 
@@ -178,7 +185,7 @@ def copy_from_csv(table_name, csv_file_path):
 # 1. Generate the data and write to csv with: write_data_to_csv(generate_data, 100)
 # 2. run copy_from_csv to push data to db, copy_from_csv( 'costumer', 'users.csv')
 
-write_data_to_csv(generate_data, 10)
+#write_data_to_csv(generate_data, 10)
 copy_from_csv( 'costumer', 'users.csv')
 copy_from_csv( 'vehicle', 'vehicles.csv')
 copy_from_csv( 'driver', 'drivers.csv')
