@@ -34,5 +34,8 @@ TODO:
 
 NEXT MEETING: Saturday 18 november 14:00 
 
+# Database connection setup
+
+Google Cloud: https://arc.net/p/2C892711-03AC-407C-9ABC-EEB45B9E6BAF
 
 
