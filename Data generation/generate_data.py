@@ -4,7 +4,9 @@ from faker import Faker
 import random
 import csv
 import geopy
+import time
 fake = Faker()
+
 
 def generate_data(scale):
     # Initialize the data containers for each table
@@ -158,36 +160,114 @@ def write_data_to_csv(data_function, scale):
 
 def copy_from_csv(table_name, csv_file_path):
     # Establish a connection to the database
-    conn_g_cloud = psycopg2.connect(
-        dbname='myride_transactional_db',
+    #Conection for azure
+    conn = psycopg2.connect(
+        dbname='proyecto',
         user='postgres',
-        password='6x*i3MNUa*L6vRJYr#DJjsEufe7',
-        host='35.184.55.57',
-        port=5432
+        password='postgres',
+        host="localhost",
+        #port=5433
     )
-    conn_azure = psycopg2.connect(
-        dbname='myride_transactional_db',
-        user='postgres',
-        password='',
-        host='',
-        port=5432
-    )
-    conn_g_cloud.autocommit = True
-    cur = conn_g_cloud.cursor()
+    # Local conection Maria Camila
+    # conn = psycopg2.connect(
+    #     dbname='myride_transactional_db',
+    #     user='postgres',
+    #     password='postgres',
+    #     host="localhost",
+    #     #port=5433
+    # )
+    
+    conn.autocommit = True
+    cur = conn.cursor()
+
     with open(csv_file_path, 'r') as f:
         cur.copy_expert(f"COPY {table_name} FROM STDIN WITH CSV HEADER DELIMITER ','", f)
+
+
+def create_database(sql_file):
+    # Establish a connection to the database
+    #Conection for azure
+    conn = psycopg2.connect(
+        dbname='proyecto',
+        user='postgres',
+        password='postgres',
+        host="localhost",
+        #port=5433
+    )
+    # Local conection Maria Camila
+    # conn = psycopg2.connect(
+    #     dbname='myride_transactional_db',
+    #     user='postgres',
+    #     password='postgres',
+    #     host="localhost",
+    #     #port=5433
+    # )
+
+    conn.autocommit = True
+    cur = conn.cursor()
+
+    sql_filename = sql_file
+    with open(sql_filename, 'r') as file:
+        sql_query = file.read()
+    cur.execute(sql_query)
+
+def fill_database(scale):
+    tables = [
+    {'name': 'users','file': 'users.csv'},
+    {'name': 'vehicles','file': 'vehicles.csv'},
+    {'name': 'drivers','file': 'drivers.csv'},
+    {'name': 'payments','file': 'payments.csv'},
+    {'name': 'rides','file': 'rides.csv'},
+    
+]
+    csv_filename = f"Loading_time_{scale}.csv"
+    with open(csv_filename, 'w', newline='') as csvfile:
+            csv_writer = csv.writer(csvfile)
+            csv_writer.writerow(['table_name', 'elapsed_time'])
+
+
+            for table in tables:
+                table_name = table['name']
+                file = table['file']
+                
+                start_time = time.time()
+                copy_from_csv(table_name,file)
+                elapsed_time = time.time() - start_time
+                print (table_name,elapsed_time)
+                # Guardar el tiempo de ejecución en un archivo CSV
+                csv_writer.writerow([table_name, elapsed_time])
+    conn = psycopg2.connect(
+       dbname='proyecto',
+       user='postgres',
+       password='postgres',
+       host="localhost",
+       #port=5433
+    )
+
+
+    conn.autocommit = True
+    cur = conn.cursor()
+    cur.execute("""
+            SELECT pg_size_pretty(pg_database_size(current_database())) AS size;
+        """)
+    total_database_size = cur.fetchone()[0]
+    return print(f"Total_size: {total_database_size}")
+
 
 # Example Usage
 
 #write_data_to_csv(generate_data, 100)
 
 # Usage
-# 1. Generate the data and write to csv with: write_data_to_csv(generate_data, 100)
-# 2. run copy_from_csv to push data to db, copy_from_csv( 'costumer', 'users.csv')
+# 0. Create database.
+# 1. Generate the data and write to csv with: write_data_to_csv(generate_data, 100).
+# 2. run copy_from_csv to push data to db, copy_from_csv( 'costumer', 'users.csv').
 
-#write_data_to_csv(generate_data, 10)
-copy_from_csv( 'costumer', 'users.csv')
-copy_from_csv( 'vehicle', 'vehicles.csv')
-copy_from_csv( 'driver', 'drivers.csv')
-copy_from_csv( 'payment', 'payments.csv')
-copy_from_csv( 'ride', 'rides.csv')
+scale=1000
+write_data_to_csv(generate_data, scale)
+create_database()
+fill_database(scale)
+
+
+
+
