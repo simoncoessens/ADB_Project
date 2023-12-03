@@ -265,7 +265,7 @@ def fill_database(scale):
 
 scale=1000
 write_data_to_csv(generate_data, scale)
-create_database()
+create_database("../adb_create_database_valerio.sql")
 fill_database(scale)
 
 
