@@ -17,8 +17,12 @@ def generate_data(scale):
     rides_data = []
     refused_rides_data = []
 
+    number_of_users = 10*scale
+    number_of_drivers = scale
+    number_of_rides = 100*scale
+
     # Generate data for the vehicle table
-    for vehicle_id in range(1, scale + 1):
+    for vehicle_id in range(1, number_of_drivers + 1):
         vehicle = {
             'vehicle_id': vehicle_id,
             'licence_plate_num': fake.license_plate(),
@@ -35,7 +39,8 @@ def generate_data(scale):
         vehicles_data.append(vehicle)
 
     # Generate data for the user table
-    for user_id in range(1, scale + 1):
+    # Here we create 10 times more users that there are drivers
+    for user_id in range(1, number_of_users + 1):
         user = {
             'user_id': user_id,
             'first_name': fake.first_name(),
@@ -46,12 +51,13 @@ def generate_data(scale):
             'phone_number': fake.phone_number(),
             'passw': fake.password(length=10),
             'account_status': random.choice(['active', 'disabled']),
-            'rating': random.randint(1, 5)
+            'rating': random.randint(1, 5),
+            'nrating': random.randint(1, 400)
         }
         users_data.append(user)
 
     # Generate data for the driver table
-    for driver_id in range(1, scale + 1):
+    for driver_id in range(1, number_of_drivers + 1):
         vehicle = vehicles_data[driver_id - 1]  # Match each driver with a vehicle
         driver = {
             'driver_id': driver_id,
@@ -69,12 +75,14 @@ def generate_data(scale):
             'rating': random.randint(1, 5),
             'vehicle_id': vehicle['vehicle_id'],  # Assign vehicle to driver
             'join_date': fake.date_between(start_date="-5y", end_date="today"),
-            'passw': fake.password(length=10)
+            'passw': fake.password(length=10),
+            'nrating': random.randint(1, 400)
         }
         drivers_data.append(driver)
 
     # Generate data for the payment table
-    for payment_id in range(1, scale + 1):
+    # We create 100 times the scale number of rides
+    for payment_id in range(1, number_of_rides + 1):
         payment = {
             'payment_id': payment_id,
             'payment_type': random.choice(['cash', 'card', 'gift', 'mix']),
@@ -84,12 +92,12 @@ def generate_data(scale):
         payments_data.append(payment)
 
     # Generate data for the ride table
-    for ride_id in range(1, scale + 1):
+    for ride_id in range(1, number_of_rides + 1):
         payment = payments_data[ride_id - 1]  # Match each ride with a payment
         ride = {
             'ride_id': ride_id,
-            'driver_id': random.randint(1, scale),
-            'user_id': random.randint(1, scale),
+            'driver_id': random.randint(1, number_of_drivers +1),
+            'user_id': random.randint(1, number_of_users + 1),
             'ride_status': random.choice(['completed', 'cancelled', 'no_show']),
             'request_code': fake.random_int(min=10000, max=99999),
             'pickup_location_lat': random_coordinates_within_nyc_lat(),
@@ -141,9 +149,9 @@ def write_data_to_csv(data_function, scale):
 
     # Prepare the CSV file parameters
     csv_info = {
-        'Users': ('users.csv', ['user_id', 'first_name', 'last_name', 'date_of_birth', 'residence', 'email', 'phone_number', 'passw', 'account_status', 'rating']),
+        'Users': ('users.csv', ['user_id', 'first_name', 'last_name', 'date_of_birth', 'residence', 'email', 'phone_number', 'passw', 'account_status', 'rating', 'nrating']),
         'Vehicles': ('vehicles.csv', ['vehicle_id', 'licence_plate_num', 'manufacturer', 'model', 'manifacture_year', 'car_policy_num', 'car_type', 'fuel', 'seats_num', 'kids_seats_num', 'wheelchair_seat']),
-        'Drivers': ('drivers.csv', ['driver_id', 'first_name', 'last_name', 'driver_status', 'date_of_birth', 'place_of_birth', 'place_of_residence', 'nationality', 'email', 'phone_number', 'licence_id', 'taxi_licence_id', 'rating', 'vehicle_id', 'join_date', 'passw']),
+        'Drivers': ('drivers.csv', ['driver_id', 'first_name', 'last_name', 'driver_status', 'date_of_birth', 'place_of_birth', 'place_of_residence', 'nationality', 'email', 'phone_number', 'licence_id', 'taxi_licence_id', 'rating', 'vehicle_id', 'join_date', 'passw', 'nrating']),
         'Payments': ('payments.csv', ['payment_id', 'payment_type', 'fare_amount', 'promo_code']),
         'Rides': ('rides.csv', ['ride_id', 'driver_id', 'user_id', 'ride_status', 'request_code', 'pickup_location_lat', 'pickup_location_lon','dropoff_location_lat', 'dropoff_location_lon', 'request_date', 'pickup_date', 'dropoff_date', 'ride_rating', 'payment_id', 'passengers_num']),
         'HasRefusedRides': ('refused_rides.csv', ['ride_id', 'driver_id'])
@@ -263,10 +271,10 @@ def fill_database(scale):
 # 1. Generate the data and write to csv with: write_data_to_csv(generate_data, 100).
 # 2. run copy_from_csv to push data to db, copy_from_csv( 'costumer', 'users.csv').
 
-scale=1000
+scale=10
 write_data_to_csv(generate_data, scale)
-create_database("../adb_create_database_valerio.sql")
-fill_database(scale)
+#create_database("../adb_create_database_valerio.sql")
+#fill_database(scale)
 
 
 
