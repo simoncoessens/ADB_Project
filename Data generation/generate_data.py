@@ -168,25 +168,25 @@ def write_data_to_csv(data_function, scale):
 
 def copy_from_csv(table_name, csv_file_path):
     # Establish a connection to the database
-    #Conection for azure
-    conn = psycopg2.connect(
-        dbname='proyecto',
-        user='postgres',
-        password='postgres',
-        host="localhost",
-        #port=5433
+    conn_gcloud = psycopg2.connect(
+        dbname = 'myride_transactional_db',
+        user = 'postgres',
+        password = '6x*i3MNUa*L6vRJYr#DJjsEufe7',
+        host = '35.184.55.57',
+        port = 5432
     )
+
     # Local conection Maria Camila
-    # conn = psycopg2.connect(
-    #     dbname='myride_transactional_db',
-    #     user='postgres',
-    #     password='postgres',
-    #     host="localhost",
-    #     #port=5433
-    # )
+    conn_azure = psycopg2.connect(
+         dbname='myride_transactional_db',
+         user='Maria',
+         password='Advance10+',
+         host="db-project.postgres.database.azure.com",
+         port=5432
+    )
     
-    conn.autocommit = True
-    cur = conn.cursor()
+    conn_gcloud.autocommit = True
+    cur = conn_gcloud.cursor()
 
     with open(csv_file_path, 'r') as f:
         cur.copy_expert(f"COPY {table_name} FROM STDIN WITH CSV HEADER DELIMITER ','", f)
