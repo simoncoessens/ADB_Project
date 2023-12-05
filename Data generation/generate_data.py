@@ -209,9 +209,9 @@ def push_to_db_from_csv(file_path, table_name):
                 reader = csv.DictReader(file)
                 for row in reader:
                     cur.execute("""
-                    INSERT INTO rides (ride_id, driver_id, user_id, ride_status, request_code, pickup_location, dropoff_location, request_date, pickup_date, dropoff_date, rating, payment_id, passengers_num)
-                    VALUES (%s, %s, %s, %s, %s, ST_MakePoint(%s, %s)::geography, ST_MakePoint(%s, %s)::geography, %s, %s, %s, %s, %s, %s)
-                    """, (
+                                    INSERT INTO rides (ride_id, driver_id, user_id, ride_status, request_code, pickup_location, dropoff_location, request_date, pickup_date, dropoff_date, rating, payment_id, passengers_num)
+                                    VALUES (%s, %s, %s, %s, %s, ST_MakePoint(%s, %s), ST_MakePoint(%s, %s), %s, %s, %s, %s, %s, %s)
+                                    """, (
                         row['ride_id'], row['driver_id'], row['user_id'], row['ride_status'], row['request_code'],
                         row['pickup_location_lon'], row['pickup_location_lat'],
                         row['dropoff_location_lon'], row['dropoff_location_lat'],
@@ -325,7 +325,7 @@ def calculate_csv_size(scale):
 # 1. Generate the data and write to csv with: write_data_to_csv(generate_data, 100).
 # 2. run copy_from_csv to push data to db, copy_from_csv( 'costumer', 'users.csv').
 
-scale=10
+scale=5
 write_data_to_csv(generate_data, scale)
 push_to_db_from_csv( 'users.csv', 'users')
 push_to_db_from_csv( 'vehicles.csv', 'vehicles')
