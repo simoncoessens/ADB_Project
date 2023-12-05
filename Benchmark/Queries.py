@@ -5,9 +5,9 @@ import sqlalchemy
 import csv
 import pandas as pd
 
-durations=[]
-def workload(scale,conexion):
 
+def workload(scale,conexion):
+    durations=[]
     scale_driver = scale
     scale_rides = 100*scale
     scale_payment = scale
@@ -229,7 +229,7 @@ def workload(scale,conexion):
     duration = time.time() - start_time
     durations.append({'Query15': duration})
 
-    filename = 'Query_times.txt'
+    filename = f'Query_times_{scale}.txt'
 
     # Save the results to a CSV file
     with open(filename, 'a', newline='') as csv_file:
