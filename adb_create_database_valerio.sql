@@ -61,6 +61,7 @@ CREATE TABLE payments (
     promo_code VARCHAR(255)
 );
 
+-- Rides Table with Geographic Columns
 DROP TABLE IF EXISTS rides CASCADE;
 CREATE TABLE rides (
     ride_id SERIAL PRIMARY KEY,
@@ -68,15 +69,13 @@ CREATE TABLE rides (
     user_id INT,
     ride_status VARCHAR(50),
     request_code INT,
-    pickup_location_lat FLOAT,
-    pickup_location_lon FLOAT,
-    dropoff_location_lat FLOAT,
-    dropoff_location_lon FLOAT,
+    pickup_location GEOGRAPHY(Point, 4326),
+    dropoff_location GEOGRAPHY(Point, 4326),
     request_date DATE,
     pickup_date DATE,
     dropoff_date DATE,
     rating INT,
-    payment_ID INT,
+    payment_id INT,
     passengers_num INT,
     FOREIGN KEY (user_id) REFERENCES users(user_id),
     FOREIGN KEY (driver_id) REFERENCES drivers(driver_id),
