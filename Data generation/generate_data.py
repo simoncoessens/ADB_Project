@@ -5,6 +5,7 @@ import random
 import csv
 import geopy
 import time
+import os
 fake = Faker()
 
 
@@ -96,8 +97,8 @@ def generate_data(scale):
         payment = payments_data[ride_id - 1]  # Match each ride with a payment
         ride = {
             'ride_id': ride_id,
-            'driver_id': random.randint(1, number_of_drivers +1),
-            'user_id': random.randint(1, number_of_users + 1),
+            'driver_id': random.randint(1, number_of_drivers),
+            'user_id': random.randint(1, number_of_users),
             'ride_status': random.choice(['completed', 'cancelled', 'no_show']),
             'request_code': fake.random_int(min=10000, max=99999),
             'pickup_location_lat': random_coordinates_within_nyc_lat(),
@@ -168,29 +169,36 @@ def write_data_to_csv(data_function, scale):
 
 def copy_from_csv(table_name, csv_file_path):
     # Establish a connection to the database
-    conn_gcloud = psycopg2.connect(
-        dbname = 'myride_transactional_db',
-        user = 'postgres',
-        password = '6x*i3MNUa*L6vRJYr#DJjsEufe7',
-        host = '35.184.55.57',
-        port = 5432
+    conn_local = psycopg2.connect(
+        dbname='myride_transactional_db',
+        user='postgres',
+        password='datamining',
+        host='localhost',
+        port=5433
     )
 
+    #conn_gcloud = psycopg2.connect(
+    #    dbname = 'myride_transactional_db',
+    #    user = 'postgres',
+    #    password = '6x*i3MNUa*L6vRJYr#DJjsEufe7',
+    #    host = '35.184.55.57',
+    #    port = 5432
+    #)
+
     # Local conection Maria Camila
-    conn_azure = psycopg2.connect(
-         dbname='myride_transactional_db',
-         user='Maria',
-         password='Advance10+',
-         host="db-project.postgres.database.azure.com",
-         port=5432
-    )
+    #conn_azure = psycopg2.connect(
+    #     dbname='myride_transactional_db',
+    #     user='Maria',
+    #     password='Advance10+',
+    #     host="db-project.postgres.database.azure.com",
+    #     port=5432
+    #)
     
-    conn_gcloud.autocommit = True
-    cur = conn_gcloud.cursor()
+    conn_local.autocommit = True
+    cur = conn_local.cursor()
 
     with open(csv_file_path, 'r') as f:
         cur.copy_expert(f"COPY {table_name} FROM STDIN WITH CSV HEADER DELIMITER ','", f)
-
 
 def create_database(sql_file):
     # Establish a connection to the database
@@ -261,6 +269,26 @@ def fill_database(scale):
     total_database_size = cur.fetchone()[0]
     return print(f"Total_size: {total_database_size}")
 
+def calculate_csv_size(scale):
+    # Generate data and write to CSV
+    write_data_to_csv(generate_data, scale)
+
+    # List of CSV files
+    csv_files = ['users.csv', 'vehicles.csv', 'drivers.csv', 'payments.csv', 'rides.csv']
+
+    # Calculate total size of CSV files in bytes
+    total_size_bytes = sum(os.path.getsize(f) for f in csv_files if os.path.isfile(f))
+
+    # Convert size to gigabytes
+    total_size_gb = total_size_bytes / (1024**3)
+
+    # Clean up: remove the CSV files after calculating size
+    #for f in csv_files:
+    #    if os.path.exists(f):
+    #        os.remove(f)
+
+    return total_size_gb
+
 
 # Example Usage
 
@@ -272,9 +300,17 @@ def fill_database(scale):
 # 2. run copy_from_csv to push data to db, copy_from_csv( 'costumer', 'users.csv').
 
 scale=10
-write_data_to_csv(generate_data, scale)
+#write_data_to_csv(generate_data, scale)
+#copy_from_csv( 'users', 'users.csv')
+##copy_from_csv( 'vehicles', 'vehicles.csv')
+#copy_from_csv( 'drivers', 'drivers.csv')
+#copy_from_csv('payments','payments.csv')
+#copy_from_csv('rides','rides.csv')
 #create_database("../adb_create_database_valerio.sql")
 #fill_database(scale)
+
+print("Number of GB:")
+print(calculate_csv_size(20000))
 
 
 
