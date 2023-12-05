@@ -101,14 +101,14 @@ def generate_data(scale):
             'user_id': random.randint(1, number_of_users),
             'ride_status': random.choice(['completed', 'cancelled', 'no_show']),
             'request_code': fake.random_int(min=10000, max=99999),
-            'pickup_location_lat': random_coordinates_within_nyc_lat(),
-            'pickup_location_lon': random_coordinates_within_nyc_lon(),
-            'dropoff_location_lat': random_coordinates_within_nyc_lat(),
-            'dropoff_location_lon': random_coordinates_within_nyc_lon(),
+            'pickup_location_lat': random_coordinates_within_lecco_lat(),
+            'pickup_location_lon': random_coordinates_within_lecco_lon(),
+            'dropoff_location_lat': random_coordinates_within_lecco_lat(),
+            'dropoff_location_lon': random_coordinates_within_lecco_lon(),
             'request_date': fake.date_between(start_date="-1y", end_date="today"),
             'pickup_date': fake.date_time_this_year(before_now=True, after_now=False),
             'dropoff_date': fake.date_time_this_year(before_now=True, after_now=False),
-            'ride_rating': random.randint(1, 5),
+            'rating': random.randint(1, 5),
             'payment_id': payment['payment_id'],
             'passengers_num': random.randint(1, 4)
         }
@@ -136,12 +136,12 @@ def generate_data(scale):
         'HasRefusedRides': refused_rides_data
     }
 
-def random_coordinates_within_nyc_lat():
-    lat_min, lat_max = 40.477399, 40.917577
+def random_coordinates_within_lecco_lat():
+    lat_min, lat_max = 45.812884, 45.898247
     return random.uniform(lat_min, lat_max)
 
-def random_coordinates_within_nyc_lon():
-    lon_min, lon_max = -74.259090, -73.700272
+def random_coordinates_within_lecco_lon():
+    lon_min, lon_max = 9.361704, 9.452684
     return random.uniform(lon_min, lon_max)
 
 def write_data_to_csv(data_function, scale):
@@ -154,7 +154,7 @@ def write_data_to_csv(data_function, scale):
         'Vehicles': ('vehicles.csv', ['vehicle_id', 'licence_plate_num', 'manufacturer', 'model', 'manifacture_year', 'car_policy_num', 'car_type', 'fuel', 'seats_num', 'kids_seats_num', 'wheelchair_seat']),
         'Drivers': ('drivers.csv', ['driver_id', 'first_name', 'last_name', 'driver_status', 'date_of_birth', 'place_of_birth', 'place_of_residence', 'nationality', 'email', 'phone_number', 'licence_id', 'taxi_licence_id', 'rating', 'vehicle_id', 'join_date', 'passw', 'nrating']),
         'Payments': ('payments.csv', ['payment_id', 'payment_type', 'fare_amount', 'promo_code']),
-        'Rides': ('rides.csv', ['ride_id', 'driver_id', 'user_id', 'ride_status', 'request_code', 'pickup_location_lat', 'pickup_location_lon','dropoff_location_lat', 'dropoff_location_lon', 'request_date', 'pickup_date', 'dropoff_date', 'ride_rating', 'payment_id', 'passengers_num']),
+        'Rides': ('rides.csv', ['ride_id', 'driver_id', 'user_id', 'ride_status', 'request_code', 'pickup_location_lat', 'pickup_location_lon','dropoff_location_lat', 'dropoff_location_lon', 'request_date', 'pickup_date', 'dropoff_date', 'rating', 'payment_id', 'passengers_num']),
         'HasRefusedRides': ('refused_rides.csv', ['ride_id', 'driver_id'])
     }
 
@@ -167,39 +167,65 @@ def write_data_to_csv(data_function, scale):
 
     print('Data written to CSV files successfully.')
 
-def copy_from_csv(table_name, csv_file_path):
+def push_to_db_from_csv(file_path, table_name):
     # Establish a connection to the database
-    conn_local = psycopg2.connect(
+    # conn_local = psycopg2.connect(
+    #    dbname='myride_transactional_db',
+    #    user='postgres',
+    #    password='datamining',
+    #    host='localhost',
+    #    port=5433
+    # )
+
+    conn_gcloud = psycopg2.connect(
         dbname='myride_transactional_db',
         user='postgres',
-        password='datamining',
-        host='localhost',
-        port=5433
+        password='6x*i3MNUa*L6vRJYr#DJjsEufe7',
+        host='35.184.55.57',
+        port=5432
     )
 
-    #conn_gcloud = psycopg2.connect(
-    #    dbname = 'myride_transactional_db',
-    #    user = 'postgres',
-    #    password = '6x*i3MNUa*L6vRJYr#DJjsEufe7',
-    #    host = '35.184.55.57',
-    #    port = 5432
-    #)
-
     # Local conection Maria Camila
-    #conn_azure = psycopg2.connect(
-    #     dbname='myride_transactional_db',
-    #     user='Maria',
-    #     password='Advance10+',
-    #     host="db-project.postgres.database.azure.com",
-    #     port=5432
-    #)
-    
-    conn_local.autocommit = True
-    cur = conn_local.cursor()
+    conn_azure = psycopg2.connect(
+         dbname='myride_transactional_db',
+         user='Maria',
+         password='Advance10+',
+         host="db-project.postgres.database.azure.com",
+         port=5432
+    )
 
-    with open(csv_file_path, 'r') as f:
-        cur.copy_expert(f"COPY {table_name} FROM STDIN WITH CSV HEADER DELIMITER ','", f)
+    conn = conn_azure
 
+    conn.autocommit = True
+    cur = conn.cursor()
+
+    try:
+        if table_name != 'rides':
+            with open(file_path, 'r', encoding='utf-8') as file:
+                cur.copy_expert(f"COPY {table_name} FROM STDIN WITH CSV HEADER DELIMITER ','", file)
+        else:
+            # Handle the 'rides' table specially for PostGIS types
+            with open(file_path, 'r', encoding='utf-8') as file:
+                reader = csv.DictReader(file)
+                for row in reader:
+                    cur.execute("""
+                    INSERT INTO rides (ride_id, driver_id, user_id, ride_status, request_code, pickup_location, dropoff_location, request_date, pickup_date, dropoff_date, rating, payment_id, passengers_num)
+                    VALUES (%s, %s, %s, %s, %s, ST_MakePoint(%s, %s)::geography, ST_MakePoint(%s, %s)::geography, %s, %s, %s, %s, %s, %s)
+                    """, (
+                        row['ride_id'], row['driver_id'], row['user_id'], row['ride_status'], row['request_code'],
+                        row['pickup_location_lon'], row['pickup_location_lat'],
+                        row['dropoff_location_lon'], row['dropoff_location_lat'],
+                        row['request_date'], row['pickup_date'], row['dropoff_date'],
+                        row['rating'], row['payment_id'], row['passengers_num']
+                    ))
+
+        # Commit the transaction
+        conn.commit()
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        conn.rollback()
+    finally:
+        cur.close()
 def create_database(sql_file):
     # Establish a connection to the database
     #Conection for azure
@@ -300,18 +326,14 @@ def calculate_csv_size(scale):
 # 2. run copy_from_csv to push data to db, copy_from_csv( 'costumer', 'users.csv').
 
 scale=10
-#write_data_to_csv(generate_data, scale)
-#copy_from_csv( 'users', 'users.csv')
-##copy_from_csv( 'vehicles', 'vehicles.csv')
-#copy_from_csv( 'drivers', 'drivers.csv')
-#copy_from_csv('payments','payments.csv')
-#copy_from_csv('rides','rides.csv')
+write_data_to_csv(generate_data, scale)
+push_to_db_from_csv( 'users.csv', 'users')
+push_to_db_from_csv( 'vehicles.csv', 'vehicles')
+push_to_db_from_csv( 'drivers.csv', 'drivers')
+push_to_db_from_csv('payments.csv','payments')
+push_to_db_from_csv('rides.csv','rides')
 #create_database("../adb_create_database_valerio.sql")
 #fill_database(scale)
-
-print("Number of GB:")
-print(calculate_csv_size(20000))
-
 
 
 
