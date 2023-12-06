@@ -28,13 +28,13 @@ def workload(scale,conexion):
     
     transaction_count = 0  # Inicializar el contador de transacciones
 
-    start_time = time.time()
+    start_time = time.perf_counter()
     for i in range(scale_driver):
         cur.execute(query, (i+1,))
         transaction_count += 1
 
     conn.commit()
-    duration = time.time() - start_time
+    duration = time.perf_counter() - start_time
     durations.append(['Query1', duration,transaction_count])
     
     # print('Query2')
@@ -42,12 +42,12 @@ def workload(scale,conexion):
     # select * from areas;
     # """
     # transaction_count = 0  # Inicializar el contador de transacciones
-    # start_time = time.time()
+    # start_time = time.perf_counter()
     # cur.execute(query)
     # transaction_count += 1
     # conn.commit()
     # transaction_count = 0  # Inicializar el contador de transacciones
-    # duration = time.time() - start_time
+    # duration = time.perf_counter() - start_time
     # durations.append(['Query2', duration,transaction_count])
     
     print('Query3')
@@ -60,11 +60,11 @@ def workload(scale,conexion):
 
 
     transaction_count = 0  # Inicializar el contador de transacciones
-    start_time = time.time()
+    start_time = time.perf_counter()
     cur.execute(query)
     transaction_count += 1
     conn.commit()
-    duration = time.time() - start_time
+    duration = time.perf_counter() - start_time
     durations.append(['Query3', duration,transaction_count])
     
     print('Query4')
@@ -77,13 +77,13 @@ def workload(scale,conexion):
     distances=[100,500,1000]
     transaction_count = 0  # Inicializar el contador de transacciones
 
-    start_time = time.time()
+    start_time = time.perf_counter()
     for i in distances:
         cur.execute(query, (i+1,))
         transaction_count += 1
 
     conn.commit()
-    duration = time.time() - start_time
+    duration = time.perf_counter() - start_time
     durations.append(['Query4', duration,transaction_count])
     
     print('Query5')
@@ -97,12 +97,12 @@ def workload(scale,conexion):
     """
     transaction_count = 0  # Inicializar el contador de transacciones
 
-    start_time = time.time()
+    start_time = time.perf_counter()
     for i in range(22):
         cur.execute(query, (i+1,))
         transaction_count += 1
     conn.commit()
-    duration = time.time() - start_time
+    duration = time.perf_counter() - start_time
     durations.append(['Query5', duration,transaction_count])
     
     print('Query6')
@@ -114,12 +114,12 @@ def workload(scale,conexion):
     distances=[1000,2000,3000,4000,5000]
     transaction_count = 0  # Inicializar el contador de transacciones
 
-    start_time = time.time()
+    start_time = time.perf_counter()
     for i in distances:
         cur.execute(query, (i+1,))
         transaction_count += 1
     conn.commit()
-    duration = time.time() - start_time
+    duration = time.perf_counter() - start_time
     durations.append(['Query6', duration,transaction_count])
     
     print('Query7')
@@ -133,12 +133,12 @@ def workload(scale,conexion):
     """
     transaction_count = 0  # Inicializar el contador de transacciones
 
-    start_time = time.time()
+    start_time = time.perf_counter()
     for i in range(22):
         cur.execute(query, (i+1,))
         transaction_count += 1
     conn.commit()
-    duration = time.time() - start_time
+    duration = time.perf_counter() - start_time
     durations.append(['Query7', duration,transaction_count])
     
     print('Query8')
@@ -148,11 +148,11 @@ def workload(scale,conexion):
     GROUP BY driver_id;
     """
     transaction_count = 0  # Inicializar el contador de transacciones
-    start_time = time.time()
+    start_time = time.perf_counter()
     cur.execute(query)
     transaction_count += 1
     conn.commit()
-    duration = time.time() - start_time
+    duration = time.perf_counter() - start_time
     durations.append(['Query8', duration,transaction_count])
     
     print('Query9')
@@ -163,11 +163,11 @@ def workload(scale,conexion):
     GROUP BY d.driver_id;
     """
     transaction_count = 0  # Inicializar el contador de transacciones
-    start_time = time.time()
+    start_time = time.perf_counter()
     cur.execute(query)
     transaction_count += 1
     conn.commit()
-    duration = time.time() - start_time
+    duration = time.perf_counter() - start_time
     durations.append(['Query9', duration,transaction_count])
     
     print('Query10')
@@ -181,12 +181,12 @@ def workload(scale,conexion):
 
     """
     transaction_count = 0  # Inicializar el contador de transacciones
-    start_time = time.time()
+    start_time = time.perf_counter()
     for i in range(22):
         cur.execute(query, (i+1,))
         transaction_count += 1
     conn.commit()
-    duration = time.time() - start_time
+    duration = time.perf_counter() - start_time
     durations.append(['Query10', duration,transaction_count])
     
     print('Query11')
@@ -197,11 +197,11 @@ def workload(scale,conexion):
     GROUP BY v.vehicle_id;
     """
     transaction_count = 0  # Inicializar el contador de transacciones
-    start_time = time.time()
+    start_time = time.perf_counter()
     cur.execute(query)
     transaction_count += 1
     conn.commit()
-    duration = time.time() - start_time
+    duration = time.perf_counter() - start_time
     durations.append(['Query11', duration,transaction_count])
     
     print('Query12')
@@ -214,11 +214,11 @@ def workload(scale,conexion):
 
     """
     transaction_count = 0  # Inicializar el contador de transacciones
-    start_time = time.time()
+    start_time = time.perf_counter()
     cur.execute(query)
     transaction_count += 1
     conn.commit()
-    duration = time.time() - start_time
+    duration = time.perf_counter() - start_time
     durations.append(['Query12', duration,transaction_count])
     
     print('Query13')
@@ -230,11 +230,11 @@ def workload(scale,conexion):
 
     """
     transaction_count = 0  # Inicializar el contador de transacciones
-    start_time = time.time()
+    start_time = time.perf_counter()
     cur.execute(query)
     transaction_count += 1
     conn.commit()
-    duration = time.time() - start_time
+    duration = time.perf_counter() - start_time
     durations.append(['Query13', duration,transaction_count])
     
     print('Query14')
@@ -249,11 +249,11 @@ def workload(scale,conexion):
 
     """
     transaction_count = 0  # Inicializar el contador de transacciones
-    start_time = time.time()
+    start_time = time.perf_counter()
     cur.execute(query)
     transaction_count += 1
     conn.commit()
-    duration = time.time() - start_time
+    duration = time.perf_counter() - start_time
     durations.append(['Query14', duration,transaction_count])
     
     print('Query15')
@@ -266,11 +266,11 @@ def workload(scale,conexion):
     ORDER BY pickup_count DESC;
     """
     transaction_count = 0  # Inicializar el contador de transacciones
-    start_time = time.time()
+    start_time = time.perf_counter()
     cur.execute(query)
     transaction_count += 1
     conn.commit()
-    duration = time.time() - start_time
+    duration = time.perf_counter() - start_time
     durations.append(['Query15', duration,transaction_count])
     
     print('Query16')
@@ -289,12 +289,12 @@ def workload(scale,conexion):
     """
 
     transaction_count = 0  # Inicializar el contador de transacciones
-    start_time = time.time()
-    for i in range(scale_rides, scale_rides+100):
+    start_time = time.perf_counter()
+    for i in range(scale_rides, scale_rides*2):
         cur.execute(query, (i+1,))
         transaction_count += 1
     conn.commit()
-    duration = time.time() - start_time
+    duration = time.perf_counter() - start_time
     durations.append(['Query16', duration,transaction_count])
 
     print('Query17')
@@ -313,12 +313,12 @@ def workload(scale,conexion):
     """
 
     transaction_count = 0  # Inicializar el contador de transacciones
-    start_time = time.time()
-    for i in range(scale_rides+100, scale_rides+600):
+    start_time = time.perf_counter()
+    for i in range(scale_rides*2, scale_rides*4):
         cur.execute(query, (i+1,))
         transaction_count += 1
     conn.commit()
-    duration = time.time() - start_time
+    duration = time.perf_counter() - start_time
     durations.append(['Query17', duration,transaction_count])
 
     print('Query18')
@@ -332,12 +332,12 @@ def workload(scale,conexion):
 
     """
     transaction_count = 0  # Inicializar el contador de transacciones
-    start_time = time.time()
-    for i in range(scale_rides, scale_rides+100):
+    start_time = time.perf_counter()
+    for i in range(scale_rides, scale_rides*2):
         cur.execute(query, (i+1,))
         transaction_count += 1
     conn.commit()
-    duration = time.time() - start_time
+    duration = time.perf_counter() - start_time
     durations.append(['Query18', duration,transaction_count])
 
     print('Query19')
@@ -350,12 +350,12 @@ def workload(scale,conexion):
 
     """
     transaction_count = 0  # Inicializar el contador de transacciones
-    start_time = time.time()
+    start_time = time.perf_counter()
     for i in range(scale_driver):
         cur.execute(query, (i+1,))
         transaction_count += 1
     conn.commit()
-    duration = time.time() - start_time
+    duration = time.perf_counter() - start_time
     durations.append(['Query19', duration,transaction_count])
 
     print('Query20')
@@ -368,12 +368,12 @@ def workload(scale,conexion):
 
     """
     transaction_count = 0  # Inicializar el contador de transacciones
-    start_time = time.time()
-    for i in range(scale_driver, scale_driver+500):
+    start_time = time.perf_counter()
+    for i in range(scale_driver, scale_driver*2):
         cur.execute(query, (i+1,))
         transaction_count += 1
     conn.commit()
-    duration = time.time() - start_time
+    duration = time.perf_counter() - start_time
     durations.append(['Query20', duration,transaction_count])
 
     print('Query21')
@@ -386,12 +386,12 @@ def workload(scale,conexion):
 
     """
     transaction_count = 0  # Inicializar el contador de transacciones
-    start_time = time.time()
-    for i in range(scale_driver+500, scale_driver+1500):
+    start_time = time.perf_counter()
+    for i in range(scale_driver*2, scale_driver*4):
         cur.execute(query, (i+1,))
         transaction_count += 1
     conn.commit()
-    duration = time.time() - start_time
+    duration = time.perf_counter() - start_time
     durations.append(['Query21', duration,transaction_count])
 
 
