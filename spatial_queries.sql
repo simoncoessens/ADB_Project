@@ -81,3 +81,11 @@ FROM areas a
 JOIN rides r ON ST_Contains(a.geom, r.pickup_location)
 WHERE a.name_g = 'Rancio - Laorca'
 GROUP BY a.name_g;
+
+-- Spatial indexes
+-- Rides Table
+CREATE INDEX idx_rides_pickup_location ON rides USING GIST (pickup_location);
+CREATE INDEX idx_rides_dropoff_location ON rides USING GIST (dropoff_location);
+
+-- Areas Table
+CREATE INDEX idx_areas_geom ON areas USING GIST (geom);
