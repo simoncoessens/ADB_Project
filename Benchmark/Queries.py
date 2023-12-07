@@ -6,7 +6,7 @@ import csv
 import pandas as pd
 
 
-def workload(scale,conexion):
+def workload(scale,conexion,j):
     durations=[]
     scale_driver = scale
     scale_rides = 100*scale
@@ -398,7 +398,7 @@ def workload(scale,conexion):
 
 
 
-    filename = f'Query_times_{scale}.txt'
+    filename = f'Query_times_{scale}_{j}.txt'
 
     # Save the results to a CSV file
     with open(filename, 'a', newline='') as csv_file:

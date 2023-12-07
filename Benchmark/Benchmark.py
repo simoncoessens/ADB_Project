@@ -34,22 +34,23 @@ local_mc=psycopg2.connect(
 # )
 
 #Parameters
-scales = [10,100]
+scales = [10]
 conexion=local_mc
 
 
 delete_csv.delete_txt(os.getcwd())
 for scale in scales:
-    print(f"{scale} starts")
-    file= f"results_{scale}"
+    for i in range(15):
+        print(f"{scale} starts")
+        file= f"results_{scale}_{i}"
 
-    times.t(gd.write_data_to_csv, [gd.generate_data, scale], f'{file}.txt')
-    times.t(cdb.create_database, ["adb_create_database.sql", conexion], f'{file}.txt')
-    times.t(pdb.push_to_db_from_csv, ['users.csv', 'users', conexion],f'{file}.txt')
-    times.t(pdb.push_to_db_from_csv, ['vehicles.csv', 'vehicles', conexion], f'{file}.txt')
-    times.t(pdb.push_to_db_from_csv, ['drivers.csv', 'drivers', conexion], f'{file}.txt')
-    times.t(pdb.push_to_db_from_csv, ['payments.csv', 'payments', conexion], f'{file}.txt')
-    times.t(pdb.push_to_db_from_csv, ['rides.csv', 'rides', conexion], f'{file}.txt')
-    delete_csv.delete_csv(os.getcwd())
-    Queries.workload(scale,conexion)
-    print(f"{scale} finished")
+        times.t(gd.write_data_to_csv, [gd.generate_data, scale], f'{file}_{i}.txt')
+        times.t(cdb.create_database, ["adb_create_database.sql", conexion], f'{file}_{i}.txt')
+        times.t(pdb.push_to_db_from_csv, ['users.csv', 'users', conexion],f'{file}_{i}.txt')
+        times.t(pdb.push_to_db_from_csv, ['vehicles.csv', 'vehicles', conexion], f'{file}_{i}.txt')
+        times.t(pdb.push_to_db_from_csv, ['drivers.csv', 'drivers', conexion], f'{file}_{i}.txt')
+        times.t(pdb.push_to_db_from_csv, ['payments.csv', 'payments', conexion], f'{file}_{i}.txt')
+        times.t(pdb.push_to_db_from_csv, ['rides.csv', 'rides', conexion], f'{file}_{i}.txt')
+        delete_csv.delete_csv(os.getcwd())
+        Queries.workload(scale,conexion,i)
+        print(f"{scale} finished")

@@ -118,3 +118,8 @@ INSERT INTO areas (name_g,geom) VALUES
 	 ('Orsa Maggiore','SRID=4326;POLYGON ((9.3748488 45.8688753, 9.3864788 45.8703097, 9.3701684 45.8811434, 9.3672501 45.880994, 9.3748488 45.8688753))');
 
 
+CREATE INDEX idx_rides_pickup_location ON rides USING GIST (pickup_location);
+CREATE INDEX idx_rides_dropoff_location ON rides USING GIST (dropoff_location);
+
+-- Areas Table
+CREATE INDEX idx_areas_geom ON areas USING GIST (geom);
