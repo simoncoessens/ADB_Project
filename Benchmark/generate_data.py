@@ -101,14 +101,14 @@ def generate_data(scale):
             'user_id': random.randint(1, number_of_users),
             'ride_status': random.choice(['completed', 'cancelled', 'no_show']),
             'request_code': fake.random_int(min=10000, max=99999),
-            'pickup_location_lat': random_coordinates_within_nyc_lat(),
-            'pickup_location_lon': random_coordinates_within_nyc_lon(),
-            'dropoff_location_lat': random_coordinates_within_nyc_lat(),
-            'dropoff_location_lon': random_coordinates_within_nyc_lon(),
+            'pickup_location_lat': random_coordinates_within_lecco_lat(),
+            'pickup_location_lon': random_coordinates_within_lecco_lon(),
+            'dropoff_location_lat': random_coordinates_within_lecco_lat(),
+            'dropoff_location_lon': random_coordinates_within_lecco_lon(),
             'request_date': fake.date_between(start_date="-1y", end_date="today"),
             'pickup_date': fake.date_time_this_year(before_now=True, after_now=False),
             'dropoff_date': fake.date_time_this_year(before_now=True, after_now=False),
-            'ride_rating': random.randint(1, 5),
+            'rating': random.randint(1, 5),
             'payment_id': payment['payment_id'],
             'passengers_num': random.randint(1, 4)
         }
@@ -136,12 +136,12 @@ def generate_data(scale):
         'HasRefusedRides': refused_rides_data
     }
 
-def random_coordinates_within_nyc_lat():
-    lat_min, lat_max = 40.477399, 40.917577
+def random_coordinates_within_lecco_lat():
+    lat_min, lat_max = 45.812884, 45.898247
     return random.uniform(lat_min, lat_max)
 
-def random_coordinates_within_nyc_lon():
-    lon_min, lon_max = -74.259090, -73.700272
+def random_coordinates_within_lecco_lon():
+    lon_min, lon_max = 9.361704, 9.452684
     return random.uniform(lon_min, lon_max)
 
 def write_data_to_csv(data_function, scale):
@@ -154,7 +154,7 @@ def write_data_to_csv(data_function, scale):
         'Vehicles': ('vehicles.csv', ['vehicle_id', 'licence_plate_num', 'manufacturer', 'model', 'manifacture_year', 'car_policy_num', 'car_type', 'fuel', 'seats_num', 'kids_seats_num', 'wheelchair_seat']),
         'Drivers': ('drivers.csv', ['driver_id', 'first_name', 'last_name', 'driver_status', 'date_of_birth', 'place_of_birth', 'place_of_residence', 'nationality', 'email', 'phone_number', 'licence_id', 'taxi_licence_id', 'rating', 'vehicle_id', 'join_date', 'passw', 'nrating']),
         'Payments': ('payments.csv', ['payment_id', 'payment_type', 'fare_amount', 'promo_code']),
-        'Rides': ('rides.csv', ['ride_id', 'driver_id', 'user_id', 'ride_status', 'request_code', 'pickup_location_lat', 'pickup_location_lon','dropoff_location_lat', 'dropoff_location_lon', 'request_date', 'pickup_date', 'dropoff_date', 'ride_rating', 'payment_id', 'passengers_num']),
+        'Rides': ('rides.csv', ['ride_id', 'driver_id', 'user_id', 'ride_status', 'request_code', 'pickup_location_lat', 'pickup_location_lon','dropoff_location_lat', 'dropoff_location_lon', 'request_date', 'pickup_date', 'dropoff_date', 'rating', 'payment_id', 'passengers_num']),
         'HasRefusedRides': ('refused_rides.csv', ['ride_id', 'driver_id'])
     }
 
