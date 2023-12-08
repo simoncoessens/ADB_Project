@@ -26,7 +26,7 @@ def workload(scale,conexion,j):
     WHERE driver_id = %s;
     """
     
-    transaction_count = 0  # Inicializar el contador de transacciones
+    transaction_count = 0   
 
     start_time = time.perf_counter()
     for i in range(scale_driver):
@@ -41,12 +41,12 @@ def workload(scale,conexion,j):
     # query = """
     # select * from areas;
     # """
-    # transaction_count = 0  # Inicializar el contador de transacciones
+    # transaction_count = 0   
     # start_time = time.perf_counter()
     # cur.execute(query)
     # transaction_count += 1
     # conn.commit()
-    # transaction_count = 0  # Inicializar el contador de transacciones
+    # transaction_count = 0   
     # duration = time.perf_counter() - start_time
     # durations.append(['Query2', duration,transaction_count])
     
@@ -59,7 +59,7 @@ def workload(scale,conexion,j):
     
 
 
-    transaction_count = 0  # Inicializar el contador de transacciones
+    transaction_count = 0  
     start_time = time.perf_counter()
     cur.execute(query)
     transaction_count += 1
@@ -75,7 +75,7 @@ def workload(scale,conexion,j):
     WHERE ST_DWithin(pickup_location, ST_MakePoint(-73.9851, 40.7589)::geography, %s);
     """
     distances=[100,500,1000]
-    transaction_count = 0  # Inicializar el contador de transacciones
+    transaction_count = 0   
 
     start_time = time.perf_counter()
     for i in distances:
@@ -95,7 +95,7 @@ def workload(scale,conexion,j):
         ST_SetSRID(pickup_location, 4326)
     );
     """
-    transaction_count = 0  # Inicializar el contador de transacciones
+    transaction_count = 0   
 
     start_time = time.perf_counter()
     for i in range(22):
@@ -112,7 +112,7 @@ def workload(scale,conexion,j):
     WHERE ST_Distance(pickup_location::geography, dropoff_location::geography) > %s;
     """
     distances=[1000,2000,3000,4000,5000]
-    transaction_count = 0  # Inicializar el contador de transacciones
+    transaction_count = 0   
 
     start_time = time.perf_counter()
     for i in distances:
@@ -131,7 +131,7 @@ def workload(scale,conexion,j):
         ST_SetSRID(pickup_location, 4326)
     );
     """
-    transaction_count = 0  # Inicializar el contador de transacciones
+    transaction_count = 0   
 
     start_time = time.perf_counter()
     for i in range(22):
@@ -147,7 +147,7 @@ def workload(scale,conexion,j):
     FROM rides
     GROUP BY driver_id;
     """
-    transaction_count = 0  # Inicializar el contador de transacciones
+    transaction_count = 0   
     start_time = time.perf_counter()
     cur.execute(query)
     transaction_count += 1
@@ -162,7 +162,7 @@ def workload(scale,conexion,j):
     JOIN rides r ON d.driver_id = r.driver_id
     GROUP BY d.driver_id;
     """
-    transaction_count = 0  # Inicializar el contador de transacciones
+    transaction_count = 0   
     start_time = time.perf_counter()
     cur.execute(query)
     transaction_count += 1
@@ -180,7 +180,7 @@ def workload(scale,conexion,j):
     WHERE ST_Crosses(ST_SetSRID(ST_MakeLine(r.pickup_location, r.dropoff_location), 4326), ab.geom);
 
     """
-    transaction_count = 0  # Inicializar el contador de transacciones
+    transaction_count = 0   
     start_time = time.perf_counter()
     for i in range(22):
         cur.execute(query, (i+1,))
@@ -196,7 +196,7 @@ def workload(scale,conexion,j):
     WHERE r.driver_id = d.driver_id AND v.vehicle_id = d.driver_id
     GROUP BY v.vehicle_id;
     """
-    transaction_count = 0  # Inicializar el contador de transacciones
+    transaction_count = 0   
     start_time = time.perf_counter()
     cur.execute(query)
     transaction_count += 1
@@ -213,7 +213,7 @@ def workload(scale,conexion,j):
     ORDER BY pickup_count DESC;
 
     """
-    transaction_count = 0  # Inicializar el contador de transacciones
+    transaction_count = 0   
     start_time = time.perf_counter()
     cur.execute(query)
     transaction_count += 1
@@ -229,7 +229,7 @@ def workload(scale,conexion,j):
     GROUP BY v.car_type;
 
     """
-    transaction_count = 0  # Inicializar el contador de transacciones
+    transaction_count = 0   
     start_time = time.perf_counter()
     cur.execute(query)
     transaction_count += 1
@@ -248,7 +248,7 @@ def workload(scale,conexion,j):
     );
 
     """
-    transaction_count = 0  # Inicializar el contador de transacciones
+    transaction_count = 0   
     start_time = time.perf_counter()
     cur.execute(query)
     transaction_count += 1
@@ -265,7 +265,7 @@ def workload(scale,conexion,j):
     GROUP BY a.name_g
     ORDER BY pickup_count DESC;
     """
-    transaction_count = 0  # Inicializar el contador de transacciones
+    transaction_count = 0   
     start_time = time.perf_counter()
     cur.execute(query)
     transaction_count += 1
@@ -280,7 +280,7 @@ def workload(scale,conexion,j):
         pickup_location,dropoff_location,request_date, pickup_date, dropoff_date,
         ride_rating, payment_id, passengers_num
     ) VALUES (
-        %s, 3, 56, 'TEST', 27164,
+        %s, 3, %s, 'TEST', 27164,
         ST_MakePoint(40.89911326259291, -74.19879968),
         ST_MakePoint(40.89119552115688, -73.78466389),
         '2023-05-04', '2023-07-07 20:03', '2023-08-23 07:54',
@@ -288,10 +288,10 @@ def workload(scale,conexion,j):
     );
     """
 
-    transaction_count = 0  # Inicializar el contador de transacciones
+    transaction_count = 0   
     start_time = time.perf_counter()
     for i in range(scale_rides, scale_rides*2):
-        cur.execute(query, (i+1,))
+        cur.execute(query, (i+1,j+1))
         transaction_count += 1
     conn.commit()
     duration = time.perf_counter() - start_time
@@ -299,22 +299,13 @@ def workload(scale,conexion,j):
 
     print('Query17')
     query = """
-    INSERT INTO rides (
-        ride_id, driver_id, user_id, ride_status, request_code,
-        pickup_location,dropoff_location,request_date, pickup_date, dropoff_date,
-        ride_rating, payment_id, passengers_num
-    ) VALUES (
-        %s, 3, 56, 'TEST', 27164,
-        ST_MakePoint(40.89911326259291, -74.19879968),
-        ST_MakePoint(40.89119552115688, -73.78466389),
-        '2023-05-04', '2023-07-07 20:03', '2023-08-23 07:54',
-        4, 1, 2
-    );
+    DELETE FROM rides
+    WHERE ride_id =%s;
     """
 
-    transaction_count = 0  # Inicializar el contador de transacciones
+    transaction_count = 0   
     start_time = time.perf_counter()
-    for i in range(scale_rides*2, scale_rides*4):
+    for i in range(scale_rides, scale_rides*2):
         cur.execute(query, (i+1,))
         transaction_count += 1
     conn.commit()
@@ -322,6 +313,47 @@ def workload(scale,conexion,j):
     durations.append(['Query17', duration,transaction_count])
 
     print('Query18')
+    query = """
+    INSERT INTO rides (
+        ride_id, driver_id, user_id, ride_status, request_code,
+        pickup_location,dropoff_location,request_date, pickup_date, dropoff_date,
+        ride_rating, payment_id, passengers_num
+    ) VALUES (
+        %s, 3, %s, 'TEST', 27164,
+        ST_MakePoint(40.89911326259291, -74.19879968),
+        ST_MakePoint(40.89119552115688, -73.78466389),
+        '2023-05-04', '2023-07-07 20:03', '2023-08-23 07:54',
+        4, 1, 2
+    );
+    """
+
+    transaction_count = 0   
+    start_time = time.perf_counter()
+    for i in range(scale_rides, scale_rides*4):
+        cur.execute(query, (i+1,j+1))
+        transaction_count += 1
+    conn.commit()
+    duration = time.perf_counter() - start_time
+    durations.append(['Query18', duration,transaction_count])
+
+    print('Query19')
+    query = """
+    DELETE FROM rides
+    WHERE ride_id =%s;
+    ;
+    """
+
+    transaction_count = 0   
+    start_time = time.perf_counter()
+    for i in range(scale_rides, scale_rides*4):
+        cur.execute(query, (i+1,))
+        transaction_count += 1
+    conn.commit()
+    duration = time.perf_counter() - start_time
+    durations.append(['Query19', duration,transaction_count])
+
+
+    print('Query20')
     query = """
     INSERT INTO payments (
         payment_id, payment_type, fare_amount, promo_code
@@ -331,45 +363,9 @@ def workload(scale,conexion,j):
     );
 
     """
-    transaction_count = 0  # Inicializar el contador de transacciones
+    transaction_count = 0   
     start_time = time.perf_counter()
     for i in range(scale_rides, scale_rides*2):
-        cur.execute(query, (i+1,))
-        transaction_count += 1
-    conn.commit()
-    duration = time.perf_counter() - start_time
-    durations.append(['Query18', duration,transaction_count])
-
-    print('Query19')
-    query = """
-    UPDATE drivers
-    SET
-        rating = (rating * nrating + 5) / (nrating + 1),
-        nrating = nrating + 1
-    WHERE driver_id = %s;
-
-    """
-    transaction_count = 0  # Inicializar el contador de transacciones
-    start_time = time.perf_counter()
-    for i in range(scale_driver):
-        cur.execute(query, (i+1,))
-        transaction_count += 1
-    conn.commit()
-    duration = time.perf_counter() - start_time
-    durations.append(['Query19', duration,transaction_count])
-
-    print('Query20')
-    query = """
-    UPDATE drivers
-    SET
-        rating = (rating * nrating + 5) / (nrating + 1),
-        nrating = nrating + 1
-    WHERE driver_id = %s;
-
-    """
-    transaction_count = 0  # Inicializar el contador de transacciones
-    start_time = time.perf_counter()
-    for i in range(scale_driver, scale_driver*2):
         cur.execute(query, (i+1,))
         transaction_count += 1
     conn.commit()
@@ -378,6 +374,22 @@ def workload(scale,conexion,j):
 
     print('Query21')
     query = """
+    DELETE FROM payments
+    where payment_id=%s;
+    """
+    transaction_count = 0   
+    start_time = time.perf_counter()
+    for i in range(scale_rides, scale_rides*2):
+        cur.execute(query, (i+1,))
+        transaction_count += 1
+    conn.commit()
+    duration = time.perf_counter() - start_time
+    durations.append(['Query21', duration,transaction_count])
+
+
+
+    print('Query22')
+    query = """
     UPDATE drivers
     SET
         rating = (rating * nrating + 5) / (nrating + 1),
@@ -385,14 +397,50 @@ def workload(scale,conexion,j):
     WHERE driver_id = %s;
 
     """
-    transaction_count = 0  # Inicializar el contador de transacciones
+    transaction_count = 0   
+    start_time = time.perf_counter()
+    for i in range(scale_driver):
+        cur.execute(query, (i+1,))
+        transaction_count += 1
+    conn.commit()
+    duration = time.perf_counter() - start_time
+    durations.append(['Query22', duration,transaction_count])
+
+    print('Query23')
+    query = """
+    UPDATE drivers
+    SET
+        rating = (rating * nrating + 5) / (nrating + 1),
+        nrating = nrating + 1
+    WHERE driver_id = %s;
+
+    """
+    transaction_count = 0   
+    start_time = time.perf_counter()
+    for i in range(scale_driver, scale_driver*2):
+        cur.execute(query, (i+1,))
+        transaction_count += 1
+    conn.commit()
+    duration = time.perf_counter() - start_time
+    durations.append(['Query23', duration,transaction_count])
+
+    print('Query24')
+    query = """
+    UPDATE drivers
+    SET
+        rating = (rating * nrating + 5) / (nrating + 1),
+        nrating = nrating + 1
+    WHERE driver_id = %s;
+
+    """
+    transaction_count = 0  
     start_time = time.perf_counter()
     for i in range(scale_driver*2, scale_driver*4):
         cur.execute(query, (i+1,))
         transaction_count += 1
     conn.commit()
     duration = time.perf_counter() - start_time
-    durations.append(['Query21', duration,transaction_count])
+    durations.append(['Query24', duration,transaction_count])
 
 
 
@@ -405,7 +453,7 @@ def workload(scale,conexion,j):
         writer = csv.writer(csv_file)
         
         for value in durations:
-            writer.writerow([value])  # Escribe cada valor en una fila separada
+            writer.writerow([value])  
 
     print('Times saved')
     return filename
