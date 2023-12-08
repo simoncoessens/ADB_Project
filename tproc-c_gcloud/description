@@ -1,0 +1,10 @@
+Folder that contains 4 logs file, each of them run with different number of transaction per users
+(visible in the name of the file).
+
+500:
+  creation of db_name: tpcc3
+  credits before running hammerdb: 240,72€
+  credits after running hammerdb: 237,62€
+
+
+  
