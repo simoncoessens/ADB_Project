@@ -1,0 +1,101 @@
+vehicle_id,licence_plate_num,manufacturer,model,manifacture_year,car_policy_num,car_type,fuel,seats_num,kids_seats_num,wheelchair_seat
+1,88D 0844,"Fernandez, Wilkinson and Bowen",specific,2008,YHFT17200905906318,normal,diesel,7,2,False
+2,ZMT 717,Pierce Group,hope,2016,DXCU94648296805922,high,electric,2,2,False
+3,3-B0940,Williams Inc,first,2023,OLSG79672469288607,high,electric,8,0,False
+4,8-A2439,Barrett-Burnett,point,2010,EEGQ15166905309424,normal,electric,3,0,False
+5,902-JNQ,Peters PLC,career,1996,CBRJ89714144880025,high,electric,3,1,False
+6,OMX2808,Mcbride-Anderson,memory,2009,ORAU32129895094344,high,diesel,8,2,True
+7,W96-SVU,Campbell and Sons,indeed,1993,NXVN30030905280929,normal,diesel,2,1,True
+8,0P 0447K,Hayes-Wilcox,cost,2005,FUCP23262829815025,normal,diesel,7,0,False
+9,OF9 0015,Vargas-Powell,society,1994,ARSU14430448742622,high,hybrid,5,2,True
+10,777JN,Howe Group,amount,1998,YQRC29585746215504,normal,diesel,5,1,False
+11,WZ 34437,Pruitt PLC,left,2010,XTNQ21383493878797,normal,hybrid,3,0,False
+12,32A N70,West and Sons,care,1996,GHPP87640905562384,normal,electric,7,0,True
+13,ZBL 963,Johnson LLC,form,2003,IAZR69451442238142,normal,diesel,4,2,False
+14,XG1 X2I,"Richardson, Erickson and Campbell",sign,2018,PMKK47179576243598,normal,electric,6,1,True
+15,30EG171,Garcia and Sons,fly,2008,KCZK91012491042352,high,diesel,6,2,True
+16,305-TEZ,Choi LLC,no,2013,RQHQ98958054460230,normal,diesel,7,1,True
+17,6ASM 24,Herrera Group,whose,2005,TVPS81120480452950,high,diesel,2,1,False
+18,NJ6 C5G,Robertson-Howard,around,2010,FDGO10269180630015,high,electric,5,2,False
+19,628 7IG,Koch Ltd,small,2002,YTUL85619010231070,high,electric,2,1,True
+20,YWX-5218,"Mcgee, Hernandez and Martinez",worry,1998,RBBP18178685909408,high,electric,2,2,False
+21,80X 708,"Green, Kim and Andrews",how,2010,SVHI76009335878690,normal,hybrid,3,0,False
+22,9N 9247M,Flores Ltd,security,2000,CCLO61766731300685,high,electric,2,2,False
+23,EPB-190,"Hernandez, Owen and Vargas",answer,2012,DBQR24812263793637,high,electric,7,0,False
+24,JTM3294,Miller-Lutz,energy,2018,XVOI53756566213921,high,diesel,8,2,False
+25,75M X63,Harmon and Sons,speak,1995,KANU93335139066465,normal,hybrid,3,1,True
+26,W47-35G,Gardner-Johnson,student,2014,DWHH83086549129241,high,electric,6,1,True
+27,0-83390T,Daugherty-Fields,including,2010,CVIX95571129740360,normal,diesel,2,1,True
+28,03M E25,Noble-White,industry,2020,ZIIS40114905467390,high,diesel,7,1,True
+29,843CJV,"Hopkins, Riley and Cox",may,2017,OPVJ16814328055867,high,electric,2,2,False
+30,QHQ-175,Tate Ltd,member,2015,GBDF00749432159331,normal,electric,5,1,True
+31,8-8029X,Trujillo LLC,long,1990,CWXZ63682625890584,normal,electric,5,1,False
+32,0N J6903,Johnson-Anderson,than,2006,VQWF74764108608019,normal,diesel,7,1,True
+33,956AZN,"Johnson, Powell and Hamilton",yet,2003,JARZ12061974763675,high,hybrid,6,1,False
+34,FTC-4178,Robinson-Dunn,school,2010,SBSC40594952597598,high,hybrid,8,1,True
+35,PBV 860,White-Miller,participant,2020,EERD82398385305602,high,hybrid,6,0,False
+36,1105 EA,Rivers Ltd,huge,2014,VATT07331311624433,high,hybrid,6,2,True
+37,NRJ-526,Mason-Dyer,should,2010,BOZG30743493335327,high,diesel,4,1,False
+38,KFD6867,Macdonald Inc,win,1993,MMYK10596528441613,normal,electric,8,2,False
+39,675-589,"Hood, Mayer and Diaz",nature,2012,ITNS60977137539857,normal,hybrid,5,0,True
+40,6HVK317,Taylor Inc,final,1999,EUFL44682781407009,high,hybrid,8,0,False
+41,050 MSY,"Kennedy, Crawford and Walters",cup,2019,DJGE53181371796384,normal,hybrid,5,1,True
+42,IME-7853,Ramirez-Carter,identify,2022,HZDM41041068894012,high,electric,4,0,True
+43,TLA-5416,Travis-Thomas,those,2016,CCGE61704016229576,high,electric,5,2,False
+44,MGR 581,Franklin Inc,police,1995,QOIQ69991363010914,high,hybrid,3,0,False
+45,482DJY,Ortega-Rodgers,fight,2014,EHTJ92388340237693,high,electric,5,2,True
+46,BJ-8605,Holt Ltd,clearly,2019,XEOQ15974813599686,normal,electric,4,0,True
+47,JWK-6033,Cannon LLC,herself,1990,PIUG20292958162002,high,electric,6,1,False
+48,TRT 062,Rangel-Schwartz,blue,2017,BNPM62349821615129,high,diesel,2,0,False
+49,129 CSZ,King PLC,successful,2022,UWAH42152803640839,normal,diesel,3,2,False
+50,LDU-3164,"Hawkins, Gardner and Harris",without,1993,EJIN83422996039233,normal,electric,5,2,True
+51,909-MPCI,Smith PLC,cold,1997,OHVI09374777077527,normal,electric,2,1,True
+52,20-8490X,"Fields, Hammond and Holland",claim,1993,XMAV67001777792485,high,hybrid,5,2,True
+53,I63-94N,Anderson Group,second,2020,OYKH74763961608107,normal,hybrid,7,2,False
+54,4844,Jensen-Smith,several,2012,WDCP41417032419518,normal,electric,7,2,False
+55,WYE-5161,Howell Ltd,finally,2022,XQIF48562777224042,normal,hybrid,3,1,False
+56,SCI 496,"Mccoy, Preston and Wilson",south,2011,LVQB67486693492260,high,diesel,5,0,True
+57,PTZ-6279,"Larsen, Romero and Trevino",part,2009,ZVRA58048355142525,high,diesel,3,0,True
+58,195-NFF,Baker Ltd,rest,2000,FOAN32222427920476,high,hybrid,4,1,True
+59,045-DIYK,Stein-Hubbard,medical,2000,DXXA10981172590346,normal,electric,3,2,True
+60,544 CD0,"Curry, Flores and Miller",system,1999,BRZI06569458687617,high,diesel,4,1,True
+61,B42 1YV,Moore-Romero,history,2002,HFVA82216636766360,high,diesel,2,1,False
+62,L95-IZN,Hardy-Nelson,ready,1992,JABI76750522582157,normal,electric,3,1,True
+63,ZKD 977,Griffin-Arnold,less,2017,CFFI27255709418178,high,diesel,8,1,False
+64,8-6651Y,Petersen-Brown,half,2002,OKQH33647767345206,normal,diesel,3,1,True
+65,958-UZE,"Brooks, Kerr and Beasley",travel,2013,LJNR22590054690139,high,diesel,4,1,True
+66,878WB,Fisher-Allen,part,2008,BHGH28254544710971,normal,hybrid,8,0,False
+67,ASJ 739,Mcdonald LLC,cold,2011,EUXZ22465625955870,high,hybrid,2,0,True
+68,409-XZL,Fuentes Inc,stuff,2013,PSSD96880481418894,high,hybrid,4,0,True
+69,323-QBD,"Parrish, Evans and Carter",exactly,2009,LUIZ91395573027004,normal,diesel,7,0,True
+70,CHL 010,Ho-Chang,toward,1994,WOVC44094688913728,normal,diesel,8,2,False
+71,853 1MU,Williams-Miller,take,2003,DIKF75990441708252,normal,electric,6,0,True
+72,348JTY,Watson PLC,certain,2014,LZHR95537445961956,high,electric,6,0,False
+73,EAP W97,Jones-Miller,performance,2019,KSKP02098820748902,normal,hybrid,4,0,True
+74,ITX-997,"Evans, Brown and Cameron",do,2003,DKSN72915058660412,normal,diesel,2,1,True
+75,36-5482I,Martinez Inc,red,2006,CBXS21037591628948,high,hybrid,8,0,False
+76,6-B3932,"Smith, Williams and Myers",just,2017,TCOZ95671380130532,normal,diesel,7,1,True
+77,397VDD,"Hall, Calderon and Thompson",along,1997,QHSA94588570367504,normal,diesel,4,2,True
+78,2HN5962,"Jones, Dunn and Mccormick",hope,2003,TPNU33445718156326,normal,diesel,5,2,True
+79,090-SGC,Lawrence-Perkins,six,1992,NCFD54101102458196,high,diesel,5,2,True
+80,4N 37045,Boyer-Reid,gas,2002,SUBF63730808809442,high,hybrid,6,2,False
+81,KLD 407,Howard-Kelly,hard,2019,YFHS00566673204551,high,electric,5,1,True
+82,9-95829,"Gross, Peterson and Ward",agency,2017,TTWB61506184224098,normal,electric,6,1,True
+83,CDF-059,Stewart Group,serious,2020,DIOX66978253128974,normal,diesel,2,0,True
+84,HFR 386,Mullen-Sutton,almost,2001,QAIN73436758615752,high,hybrid,4,2,False
+85,ZCW 691,"Clark, Ramirez and Reyes",score,1996,CZGE91869736073229,normal,hybrid,3,1,True
+86,QWC 313,"Bass, Barber and Flynn",level,2004,RTSJ59634564013793,normal,electric,6,0,True
+87,35E 218,Schwartz-Holland,candidate,1997,ZWAX54651618089883,high,hybrid,4,1,False
+88,33UG6,Fox LLC,high,2002,NFXG91478764124752,high,hybrid,2,1,False
+89,507 4PG,"Arnold, Oconnell and Cordova",oil,2013,GVWP57640398659690,normal,hybrid,6,2,True
+90,GAM 374,Logan-Neal,one,2023,ZNPX31058398552322,normal,diesel,5,1,True
+91,ZWO 256,Alexander-Smith,station,2001,BXXB59589421851980,high,electric,8,2,True
+92,HS 62113,Alvarado Inc,however,2020,HRDY87998948086879,normal,electric,7,1,False
+93,REN2771,Mullins Ltd,thought,2017,RRHR84962825638967,normal,hybrid,3,1,True
+94,WC 2894,"Stevenson, Le and Bradshaw",second,2001,GUPJ64156728302934,high,diesel,7,1,True
+95,2EDH 15,"Smith, Wilson and Mahoney",article,2014,MEIY49763795257250,high,hybrid,5,1,True
+96,04S 6169,Garcia-Cummings,work,2002,JJIC94519606752547,normal,hybrid,3,2,True
+97,4UCJ566,Jordan Ltd,budget,2019,HYJZ18673279374674,high,diesel,7,2,True
+98,ZZR 630,Rodriguez-Conner,Republican,2002,ZOAB21926237871886,high,hybrid,6,2,True
+99,2E 22372,Diaz-Edwards,simply,1998,RKDN09674227207481,normal,hybrid,2,0,True
+100,HQN 074,Cunningham-Santiago,without,2006,HDMU85285460736914,high,diesel,3,1,True

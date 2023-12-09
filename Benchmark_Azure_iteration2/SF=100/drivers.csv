@@ -1,0 +1,101 @@
+driver_id,first_name,last_name,driver_status,date_of_birth,place_of_birth,place_of_residence,nationality,email,phone_number,licence_id,taxi_licence_id,rating,vehicle_id,join_date,passw,nrating
+1,Albert,Escobar,available,1953-01-01,Danielleland,North Frankburgh,Ethiopia,dana02@example.org,(519)489-1479,5877,28795,2,1,2019-09-03,(!7BK9rS%L,41
+2,Christine,Thompson,disabled,1975-08-09,Lake Andrea,Henryland,Sri Lanka,johnsonterri@example.net,(303)553-3857,9661,72481,5,2,2020-08-28,NjTgdtL)@4,316
+3,Stephen,Barnes,unavailable,1987-04-11,Mcdanielville,North Charles,Gibraltar,boydtanya@example.com,324.295.8310x96056,3516,40679,1,3,2020-12-06,h7#_6Bbq#*,170
+4,Kimberly,Park,available,1963-06-07,Deborahtown,Macdonaldfort,Korea,jacob46@example.net,(891)830-2889x678,5547,31259,5,4,2021-08-26,U2fNAC)#(c,358
+5,Lauren,Walters,available,1996-04-25,East Wendyside,West Jason,Pitcairn Islands,angelaclark@example.com,(518)497-2919x375,2372,31334,5,5,2023-01-26,53kHEMaj@#,299
+6,Shelia,Fernandez,disabled,1964-10-06,West Bethhaven,Meganside,Singapore,gdelacruz@example.com,524-744-7840,7657,84027,3,6,2023-04-27,+TDV9!Nvo1,14
+7,Janet,Martin,available,1999-04-07,Normanshire,Jenniferfurt,Guadeloupe,courtneymarks@example.org,(618)342-4041,3756,99184,4,7,2019-12-12,^1Cg3OfW72,45
+8,Matthew,Carter,disabled,1989-03-12,Port Karenmouth,Jessicashire,Palestinian Territory,sherimccormick@example.net,(267)908-9220x9881,3336,67719,5,8,2020-06-23,1zG(BzRK*b,310
+9,Daniel,Jennings,unavailable,1980-04-18,Lake Maria,Lake Eric,Sri Lanka,brandon61@example.org,001-262-555-2345,9410,97622,5,9,2023-10-09,)qmuN#BC0t,244
+10,Tina,Watts,unavailable,1980-04-06,Hughesborough,Port Taylor,Palestinian Territory,teresadavis@example.net,001-731-270-5528x80175,2652,79430,1,10,2021-01-03,0K1D!tcU+5,240
+11,Paul,Hayes,unavailable,1955-03-31,New Todd,North Timothy,Bolivia,brianguzman@example.com,6106561789,8010,37142,2,11,2019-04-21,$d8EA^buu0,171
+12,Alyssa,Taylor,disabled,1999-02-19,Weberburgh,Brownport,Sudan,jennifer96@example.com,803.201.6586,2807,38705,5,12,2020-12-09,n5IOt%fs!G,38
+13,Melanie,Torres,available,1967-03-20,Port Jeffrey,Lake Lauren,Ireland,adrianjackson@example.org,563-819-5517,9150,92020,1,13,2019-06-26,uMBYZZan+5,137
+14,Erica,Bradford,available,1974-11-22,North Thomasmouth,East Whitney,Samoa,glassharold@example.net,811.316.7257,7136,74249,4,14,2021-09-04,v8PrTFih@R,30
+15,Laura,Gray,disabled,1960-07-20,East Jackieside,South Denise,Guinea-Bissau,kaylawalker@example.org,+1-431-766-5860x5904,2537,18507,4,15,2019-02-25,_8Oh4h@FV6,312
+16,Heather,Martinez,disabled,1988-12-24,Kellytown,Robertstad,Congo,bakerchristian@example.com,+1-322-878-7043x93952,9605,72537,5,16,2022-03-07,$4g1NfCmA9,330
+17,Mark,Marks,disabled,1954-03-27,New Johnnyport,Allisonshire,Cayman Islands,harrisondavid@example.com,(746)817-9435x555,1090,10130,4,17,2023-03-11,pXw3f1Vw++,79
+18,Kelly,Hurley,unavailable,1957-09-03,West Rachelbury,New Monica,Azerbaijan,jasonlivingston@example.net,+1-727-895-9548,2836,21737,1,18,2019-08-21,_n8QrN&ok6,19
+19,Jeffrey,Clark,disabled,1978-01-25,Coleside,Danielberg,Bangladesh,rschneider@example.com,(740)365-4945,1469,88709,1,19,2021-09-08,NQ9!XJlN%2,195
+20,John,Young,disabled,1979-01-12,Port Samuelside,South Williamport,French Guiana,david14@example.org,001-896-996-2277x053,7481,57582,1,20,2023-04-10,Lfg916Etq#,24
+21,Melissa,Morales,available,1959-03-02,South Donna,Tinafurt,Afghanistan,william81@example.org,798.646.9080,8878,72723,2,21,2020-11-14,GCHF3XQo_5,208
+22,Patty,Jones,available,1986-05-31,Marvinland,East Mackenzieside,Lesotho,caitlinharris@example.org,+1-589-616-9010x00461,1376,69215,5,22,2019-06-06,^rIZh8ne#8,350
+23,Jose,Fletcher,unavailable,2004-10-28,Lake Douglasborough,New Lisaborough,El Salvador,lisa01@example.com,644.292.2365x323,9109,10175,3,23,2023-10-11,PPj&%n&o@9,332
+24,Morgan,Ramos,available,1996-06-03,Janetburgh,North Alicia,Reunion,williamsjulie@example.net,572.765.1849x758,6023,42118,4,24,2023-11-27,m!&o4Vmd)*,294
+25,Daniel,Clark,unavailable,1973-03-03,Barnettshire,Louisland,Northern Mariana Islands,mariabarron@example.org,454.588.0185,1161,75142,1,25,2023-04-24,sk8$0OEp%d,267
+26,Hannah,Colon,unavailable,1983-09-02,Adamsville,West William,Madagascar,rwong@example.net,(649)361-7520x03914,5715,34504,5,26,2023-10-30,6c9ExLpr@u,327
+27,Mary,Soto,available,1956-09-10,North James,Hansontown,Monaco,edwinsmith@example.com,(694)314-2683x00121,2043,48138,4,27,2022-06-22,bFW(ZIhK_3,14
+28,Maria,Brock,disabled,2004-12-15,North Amy,Ariasmouth,Costa Rica,jamie68@example.net,+1-217-296-2804x30110,3761,73524,2,28,2020-02-14,2VT(kTQR+r,142
+29,Katie,Castillo,available,1991-02-23,Williamsstad,Davidmouth,Falkland Islands (Malvinas),jennifer98@example.com,(350)492-5643,9315,27229,2,29,2023-03-03,zR*6WeVOgc,14
+30,Kristen,Summers,disabled,2002-04-24,Kevinberg,East Shelleytown,Israel,michael33@example.com,787-736-1238x720,8222,73734,4,30,2022-11-13,00pC%pQG*h,336
+31,Amber,Long,disabled,1957-03-22,North Michelle,Suzannemouth,Estonia,daniellepeterson@example.com,831.495.9053x089,5375,72581,3,31,2022-09-27,bj2C1Jpt%v,298
+32,Matthew,Frey,unavailable,1975-04-02,Aliciaborough,Lesliebury,Turks and Caicos Islands,stephenjackson@example.org,(780)848-3866,5687,82669,1,32,2022-07-08,1oFAks7z*S,72
+33,Rachel,Murphy,available,1982-03-16,West Jillian,Port Sharon,Syrian Arab Republic,kbrown@example.org,567-862-1969x5032,2108,33914,4,33,2021-03-08,ndsxQtzi+4,364
+34,James,Singleton,unavailable,1993-07-23,Port Davidside,Delgadomouth,United States Virgin Islands,rhodeselizabeth@example.org,207.512.9133x211,1150,28408,4,34,2020-01-20,R0OW&zeh#e,315
+35,David,Flores,available,2005-09-30,Port Eric,South Mark,Jersey,vmoreno@example.net,001-515-539-5155x610,6400,72911,3,35,2020-06-30,)9o9Kz9*LB,138
+36,Christina,Phillips,unavailable,1968-10-29,Joshuamouth,Haleyburgh,Iraq,melissaaustin@example.org,001-220-886-1346x6349,2186,81549,2,36,2021-09-11,x9%WeMYW@^,317
+37,Samantha,Knight,unavailable,1952-12-22,North Edward,Reginaburgh,Mozambique,bentoncheryl@example.com,(433)831-4448,7848,37311,2,37,2023-02-09,8$8tYDVo#o,224
+38,Lori,Moore,available,1957-07-29,Perezmouth,Josephland,Turks and Caicos Islands,stacey84@example.org,001-362-983-1764x6810,7015,48732,3,38,2022-10-07,56YB(oRE*F,133
+39,Norma,Lane,available,1971-07-29,Teresahaven,Lake Roberthaven,Yemen,daniel06@example.net,478.903.7064x919,3352,21458,4,39,2021-02-23,W%X6YB#wPs,44
+40,Frank,Clarke,available,2002-03-27,Rodriguezchester,Mitchelltown,Saint Helena,imcclain@example.com,2385090015,5459,50778,2,40,2022-02-24,!D6TMeT1b%,98
+41,Zachary,Rosario,available,1984-12-22,North Brendaland,Victoriafurt,Marshall Islands,millerjanice@example.org,647.505.1554x629,2235,91867,4,41,2021-06-17,9ziC8Zmg#z,34
+42,Martin,Byrd,disabled,1975-05-15,East Normanfort,Longborough,Djibouti,michael74@example.net,001-761-772-3917x53440,6929,26592,4,42,2020-12-24,_37GDv2ut@,384
+43,Angela,Wu,disabled,1999-03-16,East Danielfurt,West Shawn,Bahamas,jwright@example.org,524-740-4177,4068,54839,4,43,2021-01-16,@9ccrvTsu3,236
+44,Jennifer,Ellison,disabled,1971-11-24,Alexisfurt,Perezside,Colombia,stephanie32@example.com,001-324-817-1971,5206,42423,5,44,2021-11-17,&PZ+s+m0#8,16
+45,Kristin,Murray,disabled,1985-10-29,Fordburgh,Deniseburgh,Monaco,josephmills@example.net,495.608.8689x38076,6752,46559,3,45,2019-10-25,0v7LWl%jT@,272
+46,Nicole,Jones,unavailable,1991-08-20,Aaronfort,East Kim,Cameroon,kevin66@example.org,467-906-6945x8145,7796,69257,5,46,2019-01-24,@h98OEu(!5,261
+47,Gary,Richardson,unavailable,1980-09-18,Port Patricia,Wilsonborough,Marshall Islands,igreen@example.org,819.717.6677x54591,9529,24970,2,47,2021-01-07,636lnZIt^V,194
+48,Laura,Perez,unavailable,1981-06-22,Amandatown,West Elizabethfort,Slovenia,ubaker@example.net,001-885-595-6630x22694,9287,43696,3,48,2022-06-28,i5TKCSVU(4,215
+49,Juan,Hahn,unavailable,1953-05-24,Robinsonbury,Nicolemouth,United States of America,josephmyers@example.net,001-887-804-4351x948,1013,32410,5,49,2022-02-24,0AgvM+Be+h,43
+50,Jason,Barker,disabled,2002-08-04,Christinaton,Brooketown,Tunisia,zcollins@example.com,001-288-329-3295x9794,4626,23562,2,50,2020-03-14,^pAe2%ee@0,153
+51,Daisy,Kirk,disabled,2005-11-11,Scottmouth,Grahamstad,Qatar,erinlopez@example.com,001-917-341-6994x8221,6022,54430,3,51,2023-06-14,@^5z$E@h0#,246
+52,Joseph,Chavez,unavailable,1988-09-25,Port Erica,East Davidfort,Uzbekistan,vchang@example.net,601.723.0340,5282,86585,2,52,2019-09-05,%P*8Rjy1g!,246
+53,Joseph,Bryant,disabled,1988-07-12,Johnsonville,South Tinafurt,Nauru,kmitchell@example.org,704.661.6459,9828,89030,1,53,2019-01-29,@wXy+*i*(7,101
+54,Tracy,Kelly,disabled,2004-04-07,North Jasonside,Hayesfurt,Monaco,earlramirez@example.org,9588156340,5386,66595,4,54,2023-06-04,+w5JCKVad+,145
+55,Isaac,Lee,unavailable,1982-04-03,Lake Tammy,Lake Sean,Gabon,katieramsey@example.net,395-801-0331x53089,2964,63744,3,55,2020-06-30,g!ZSqK((+1,58
+56,Nicole,Harvey,available,1968-07-30,Port Adrianmouth,North Wayneburgh,Hong Kong,fharris@example.org,001-918-248-6939,6093,66460,3,56,2021-07-12,)n7Gk3ogQS,331
+57,Gabriela,Gilbert,available,1988-12-02,Joseland,New Michaelfort,Denmark,porterchelsea@example.com,(208)830-3989x60703,3478,24323,1,57,2022-11-02,NH4RYXUv&M,69
+58,Donald,Wright,available,1977-12-28,East Sarah,Ortizville,Israel,christopherjohnston@example.org,738-214-7863x5276,7646,65792,4,58,2020-11-27,IUK0(vpwI$,195
+59,Raymond,Miller,available,1962-02-17,New Mollyville,New Aprilland,Congo,ymartin@example.org,+1-927-403-2639x3205,3684,99695,5,59,2019-08-13,i9FN&OAk%2,334
+60,Bruce,Schultz,disabled,1962-04-23,Butlerchester,Stevensbury,Bahamas,obradley@example.org,404-766-8596,2275,29610,4,60,2022-04-03,%+X0Ugk_rX,390
+61,Patrick,Nelson,disabled,2003-03-30,South Bradleychester,North Patrickstad,New Zealand,brian64@example.org,(606)344-6644,7449,63787,2,61,2021-09-04,@XE^9aEmrz,66
+62,Matthew,Webster,disabled,1996-10-24,Amandabury,Lake Tracyland,Rwanda,jason17@example.com,659.595.7141,1527,79290,4,62,2019-12-30,Nk&32PAyW^,301
+63,Alexis,Hicks,unavailable,2003-05-31,Lake Christopher,Darleneland,Guam,jasmine41@example.com,001-255-464-8489,6485,11897,4,63,2022-02-10,&DP8P1UiGm,278
+64,Daniel,Moore,unavailable,1969-06-16,Port Jennifer,Mitchellborough,India,pattersonmichael@example.net,462.797.2286,4491,79813,2,64,2020-02-24,@o1ET@Te*!,345
+65,Alexander,Riley,available,1986-05-06,Wheelerborough,Antonioton,South Georgia and the South Sandwich Islands,christina38@example.org,704-746-5696x7668,9300,31350,2,65,2019-12-23,f&qM1Ib0*!,306
+66,Crystal,Garrett,unavailable,1987-04-04,Thomasport,New Juanborough,Tunisia,johnrogers@example.com,431-219-9078x5610,8306,18360,5,66,2023-11-12,qm3KzFNGi^,283
+67,Tamara,Castro,unavailable,1966-09-22,Hamiltonshire,Port Evanberg,Burundi,brian48@example.com,+1-922-789-1671x400,1603,78746,1,67,2021-03-29,E)3@xOsn5%,164
+68,Brandon,Singleton,disabled,1954-07-14,Johnsonside,Oliverfurt,Honduras,felicia47@example.org,597.733.2842,4063,54806,3,68,2022-08-01,&w+V8O9lv$,318
+69,Rebecca,White,unavailable,1983-07-19,Port Jasminefort,Port Lindamouth,Rwanda,jacobjenkins@example.com,001-974-999-5089,7989,81557,2,69,2022-01-12,6u6^NWVh^A,198
+70,Christopher,Evans,unavailable,1961-09-05,Jacobton,Matthewville,Martinique,hansonchristine@example.com,760-766-5694,1010,24678,4,70,2021-09-21,uYpI11Nl#P,315
+71,Christine,Armstrong,available,1963-01-24,Bryantland,North Ericview,Cuba,clarence02@example.org,(875)924-0029x94833,5401,13047,3,71,2020-08-15,W!9wG0Jt7*,171
+72,Amanda,Mcconnell,available,1962-12-05,South Emily,North Williamport,Svalbard & Jan Mayen Islands,tinasims@example.com,(583)893-4240,6948,59474,5,72,2019-11-05,168$uQWe*l,237
+73,Melinda,Strickland,disabled,1965-01-12,New Kenneth,Thompsonbury,Saint Helena,jenniferjones@example.net,+1-616-259-5481x5242,2360,51843,2,73,2021-06-22,_H9$CYan(X,226
+74,Nathaniel,Smith,unavailable,1973-11-19,Port Tracy,West Amy,Antarctica (the territory South of 60 deg S),phillipsdavid@example.org,645.297.8899x86105,2383,19641,1,74,2020-08-06,8UQ5EbKU+R,345
+75,Kevin,Rivera,unavailable,1957-09-17,Carrieside,Weaverville,Norfolk Island,josephyoung@example.net,(665)758-4717,2123,69083,4,75,2023-03-07,94Oxm2an%w,375
+76,Kimberly,Martinez,unavailable,2004-10-13,Palmerfort,West Bryanside,Palau,anthonycarrillo@example.net,873.565.0761x9008,5132,41173,4,76,2023-03-26,I56d3%Ey^(,129
+77,Ruth,Sellers,available,1963-01-27,Rachelstad,Rossport,Palau,keiththomas@example.org,+1-802-296-4311x793,2810,33765,5,77,2023-06-24,&RTg3RqnMr,70
+78,Lorraine,Williams,unavailable,1986-02-28,New Andrew,Elizabethfurt,Micronesia,jeanettethomas@example.net,001-598-589-0684,9226,84397,3,78,2021-05-13,&A4ihNiiJN,379
+79,Tom,Rodriguez,disabled,1955-08-07,Lake Sarah,East Angelicamouth,Mauritius,francowanda@example.org,9906876322,1424,79251,1,79,2020-08-06,@QK#29Ks%+,126
+80,Erin,Medina,disabled,2004-02-10,Hortonview,Rollinston,Mexico,tleach@example.com,+1-960-282-7635,5194,95245,3,80,2022-08-23,*KPQpGUqU5,190
+81,Alexandra,Kelly,available,1990-01-31,Amandafort,Port Lisa,Chad,johnsoneric@example.com,6025923163,7290,94290,4,81,2023-07-27,(9l8FaNn%7,262
+82,Erica,Foster,available,1986-04-15,West Karaside,Port Robert,Malta,larsonkyle@example.net,+1-600-997-9383,1256,63913,1,82,2019-10-21,*38GcYhcBg,207
+83,Samuel,Johnson,unavailable,1964-01-04,Troymouth,Davismouth,Ethiopia,jonathan39@example.org,630.857.6515x3006,3285,72682,4,83,2022-10-11,29ON@Ovo!4,355
+84,Hannah,Price,disabled,1965-06-13,North Glenn,New Justin,Botswana,yboyd@example.net,001-777-524-9633,6596,74743,4,84,2022-08-21,)lwVSerPI0,274
+85,Anthony,Cook,unavailable,1973-03-21,Lake Jessicastad,Thomasland,United States of America,kevin28@example.org,859.261.0473,4265,62785,2,85,2022-06-15,_S4jEun09#,322
+86,Nathan,Stone,available,2003-10-29,Port Tammy,Nguyenview,Ethiopia,matthewmcclure@example.com,207-211-3754x667,4868,10103,5,86,2021-06-20,HXqJjudg)8,373
+87,Tracy,Blevins,unavailable,1968-02-27,Jacksonhaven,Derekborough,Gabon,heather80@example.net,513.470.0486,1625,17824,3,87,2022-05-24,v$a02WFjx%,342
+88,Kelly,Lane,unavailable,1991-05-26,Nicholasland,Karinamouth,Afghanistan,morasusan@example.org,859.255.6620x550,2067,35296,5,88,2021-03-25,k3dbM6jx#%,174
+89,Timothy,Norman,disabled,1981-12-18,Hughesfort,South Bryan,San Marino,amanda83@example.org,817-403-3892x414,9537,16514,5,89,2020-01-11,x3P$w1hF!P,337
+90,James,Martinez,disabled,1959-09-19,Kevinberg,Port Brendaview,United Arab Emirates,harrisonkevin@example.com,521.657.4666,7954,72540,1,90,2021-02-06,)0^wuz4^Mg,151
+91,Jessica,Stephenson,available,1953-08-08,North Christopherside,North Robert,Netherlands Antilles,moorekatherine@example.net,+1-453-802-4927x497,9775,22385,1,91,2019-12-18,@JS1B^h&Q_,143
+92,Frank,Thomas,disabled,1961-10-17,South David,Freyland,Philippines,ojohnson@example.net,855-374-6214,6685,83539,2,92,2020-09-13,L5W*bbYn&x,202
+93,Scott,Miranda,unavailable,1986-05-02,West Martintown,Hillmouth,Western Sahara,hintonjames@example.org,+1-866-563-2572x096,6666,80795,5,93,2021-04-19,t(x4Q5uMRv,264
+94,Elizabeth,Martinez,available,1973-09-14,Janicebury,Lishire,Falkland Islands (Malvinas),kelseymills@example.org,839-312-1596x3575,9852,36782,3,94,2022-12-09,t@0Buv#7u+,288
+95,Samuel,Mclaughlin,available,1989-04-26,North Eric,Waltonfort,American Samoa,breanna11@example.net,+1-240-687-9835x55482,6697,28872,5,95,2020-06-19,qY6LxX^v#u,132
+96,Roger,Moreno,unavailable,1988-10-14,New Ginaborough,Jonesbury,Solomon Islands,anitamunoz@example.org,(332)371-6616,7470,66735,5,96,2020-02-17,XQ4T+BmE(M,116
+97,Thomas,Alvarado,disabled,1960-05-23,East Thomasville,North Terrihaven,Panama,ewilliams@example.net,(891)726-9922x8394,9445,84991,3,97,2020-10-01,#Wd2R3lakP,274
+98,Toni,Marshall,disabled,1956-10-15,Petersonfort,New Kenneth,Tajikistan,andrewjones@example.org,(240)292-7401x1299,3661,91553,2,98,2020-03-29,#yUYXysu)4,64
+99,Cindy,Hill,disabled,1998-07-15,New Lynnmouth,North Anthonychester,Guyana,smithjames@example.net,940.608.2620x0498,2775,86260,1,99,2018-12-17,_8ZtpcLuRP,316
+100,Beth,Johnson,disabled,1966-06-28,Bennettborough,Lake Dominic,Taiwan,elizabethmcgrath@example.org,001-529-816-3353x5899,4417,19298,5,100,2019-08-16,mzZ!2JsUWE,245

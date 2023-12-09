@@ -1,0 +1,11 @@
+driver_id,first_name,last_name,driver_status,date_of_birth,place_of_birth,place_of_residence,nationality,email,phone_number,licence_id,taxi_licence_id,rating,vehicle_id,join_date,passw,nrating
+1,George,Cowan,available,1971-07-25,East Hannah,Lake Kelsey,Algeria,ryanleslie@example.com,(528)959-3704,7618,29980,1,1,2020-10-01,_ZusFN3ti0,248
+2,Claudia,Pace,available,1965-05-19,Byrdside,Port Bryan,Isle of Man,klinestephanie@example.com,001-933-978-1870x49602,9342,40452,4,2,2021-06-24,@a7RQd_xMT,146
+3,Joseph,Bowman,disabled,1966-01-18,Cobbborough,Shelbyhaven,Qatar,nwhite@example.net,+1-327-338-4263x12262,4374,81289,4,3,2019-07-30,QL8+#YuGZ),71
+4,Allison,Bowman,unavailable,1983-05-23,Samanthabury,Lake Katrinamouth,Switzerland,melaniegraham@example.com,7983550000,1569,47028,2,4,2021-03-06,#qBLVd44t4,59
+5,Jason,Larson,unavailable,1976-02-13,Port Luischester,Brendaborough,Greenland,karen70@example.org,779-213-7755x67988,2598,18785,3,5,2020-11-26,6oXKG8Nbo#,42
+6,Meghan,Cunningham,unavailable,1961-07-03,South Elizabeth,Wileyfort,Malta,reeddavid@example.org,001-354-981-4484x68518,9239,25465,3,6,2020-02-26,z_tHJ2Znl+,265
+7,Matthew,Harris,disabled,1982-08-10,Staceyshire,North Amanda,Syrian Arab Republic,millerkrystal@example.org,+1-898-658-2323x1059,6916,68658,3,7,2022-09-11,g)gH32q7!H,266
+8,Angela,Burton,available,1968-11-08,West Marychester,North Jacqueline,Hungary,cheryl11@example.com,429.672.8906,4709,81260,2,8,2019-10-17,R8E@jxJv^G,141
+9,Jennifer,Lloyd,available,1976-02-09,North Taylor,Timothyhaven,Oman,jeffrey76@example.com,(473)798-2649,3932,50265,4,9,2021-01-23,xW(RQI*q(3,173
+10,Donald,Harrison,unavailable,2004-04-27,Campbellfort,West Emily,Czech Republic,charles59@example.com,947-437-1411x61285,1794,49449,1,10,2021-10-18,4CUc@vux#b,89
