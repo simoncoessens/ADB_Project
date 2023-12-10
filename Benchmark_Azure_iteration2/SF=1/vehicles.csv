@@ -1,0 +1,3 @@
+vehicle_id,licence_plate_num,manufacturer,model,manifacture_year,car_policy_num,car_type,fuel,seats_num,kids_seats_num,wheelchair_seat
+1,Z 480955,Hall-Gray,senior,2022,LHRI84057921332740,high,diesel,5,0,False
+2,NGS-383,Jackson-Acosta,member,2000,VOJD63805247415959,high,hybrid,2,0,False

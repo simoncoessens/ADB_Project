@@ -34,7 +34,7 @@ local_mc = psycopg2.connect(
 #)
 
 # Parameters
-scales = [10,100,1000]
+scales = [2]
 conexion = local_mc
 
 for scale in scales:

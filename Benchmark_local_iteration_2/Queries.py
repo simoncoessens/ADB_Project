@@ -280,7 +280,7 @@ def workload(scale,conexion,j):
         pickup_location,dropoff_location,request_date, pickup_date, dropoff_date,
         ride_rating, payment_id, passengers_num
     ) VALUES (
-        %s, 3, %s, 'TEST', 27164,
+        %s, 1, %s, 'TEST', 27164,
         ST_MakePoint(40.89911326259291, -74.19879968),
         ST_MakePoint(40.89119552115688, -73.78466389),
         '2023-05-04', '2023-07-07 20:03', '2023-08-23 07:54',
@@ -319,7 +319,7 @@ def workload(scale,conexion,j):
         pickup_location,dropoff_location,request_date, pickup_date, dropoff_date,
         ride_rating, payment_id, passengers_num
     ) VALUES (
-        %s, 3, %s, 'TEST', 27164,
+        %s, 1, %s, 'TEST', 27164,
         ST_MakePoint(40.89911326259291, -74.19879968),
         ST_MakePoint(40.89119552115688, -73.78466389),
         '2023-05-04', '2023-07-07 20:03', '2023-08-23 07:54',

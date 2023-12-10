@@ -34,7 +34,7 @@ conn_gcloud = psycopg2.connect(
 #)
 
 # Parameters
-scales = [10,100,1000]
+scales = [2]
 conexion = conn_gcloud
 
 for scale in scales:

@@ -35,7 +35,7 @@ def generate_data(scale):
             'fuel': random.choice(['diesel', 'electric', 'hybrid']),
             'seats_num': random.randint(2, 8),
             'kids_seats_num': random.randint(0, 2),
-            'wheelchair_seat': bool(random.getrandbits(1))  # Random True/False for boolean field
+            'wheelchair_seat': bool(random.getrandbits(1))
         }
         vehicles_data.append(vehicle)
 
@@ -74,7 +74,7 @@ def generate_data(scale):
             'licence_id': fake.random_int(min=1000, max=9999),
             'taxi_licence_id': fake.random_int(min=10000, max=99999),
             'rating': random.randint(1, 5),
-            'vehicle_id': vehicle['vehicle_id'],  # Assign vehicle to driver
+            'vehicle_id': vehicle['vehicle_id'],
             'join_date': fake.date_between(start_date="-5y", end_date="today"),
             'passw': fake.password(length=10),
             'nrating': random.randint(1, 400)
