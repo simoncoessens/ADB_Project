@@ -1,5 +1,8 @@
 # ADB_Project
 
+Project Contributors: 
+Simon Coessens, Valerio Rocca, Ludovica Caiola, Maria Camila Salazar
+
 Project Structure 
 
 ```
