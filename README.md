@@ -1,41 +1,47 @@
 # ADB_Project
 
-Project repo for the Advanced Databases course at ULB. 
+Project Structure 
 
+```
+├── 1.Data_generation
+├── 2.\ SQL_files
+├── 3.Testing_files
+├── 4.Project_Benchmarking_Files
+│   ├── Benchmark_Azure_iteration
+│   │   ├── SF=1
+│   │   ├── SF=10
+│   │   ├── SF=100
+│   │   └── SF=1000
+│   ├── Benchmark_GCloud_iteration
+│   ├── Benchmark_local_iteration
+│   └── README.md
+├── 5.TPROC_C
+├── 6.Analysis
+│   ├── Azure_data
+│   ├── Google_data
+│   ├── Local_data
+│   ├── analyse.py
+│   ├── average.py
+│   ├── exports
+│   └── loading_times.py
+├── Project_explanation.md
+└── Project_organisation.md
+```
 
-# MEETING 9 november
+1. Data_generation
+	- Contains the data generation files
+2. SQL_files 
+	- Contains the files for creating the database and some sql queries
+3.Testing_files
+	- Some testing Files
+4. Project_Benchmarking_Files
+	- Results from running our self-created Project Benchmark
+	- For GCloud, Azure, Local
+5. TPROC_C
+	- The results from the TPROC-C benchmark
+6. Analysis
+	- Code to analyse the results
 
-TODO for next time: 
-- Simon: Azure, Data generation (geo data), think about what benchmark to use
-- Valerio: G cloud, think about what type of queries we are going to run
-- Ludovica: G cloud, How to perform the benchmark for cloud?
-- Maria: Azure, How to perform the benchmark for cloud?
-
-
-NEXT MEETING: 11:00 Tuesday 14
-- Valerio: okay for me
-
-# MEETING 14 November
-
-Google Cloud
-STEPS: 
-1. Create the connection to the DB from python
-2. Try running some queries
-3. Decide the scale factors
-
-Microsoft Azure
-1. Create the connection to the DB from python
-2. Try running some queries
-3. Decide the scale factors
-
-TODO: 
-1. Ask prof. Zimanyi about standard benchmarks
-2. Implement a dummy database with connection from python
-
-NEXT MEETING: Saturday 18 november 14:00 
-
-# Database connection setup
-
-Google Cloud: https://arc.net/p/2C892711-03AC-407C-9ABC-EEB45B9E6BAF
+	
 
 

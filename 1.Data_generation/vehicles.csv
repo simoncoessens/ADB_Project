@@ -1,0 +1,6 @@
+vehicle_id,licence_plate_num,manufacturer,model,manifacture_year,car_policy_num,car_type,fuel,seats_num,kids_seats_num,wheelchair_seat
+1,IPK-8479,"Holt, Torres and Williams",remain,1996,JYPS36654836922040,normal,diesel,2,0,True
+2,U42-SVC,Perry and Sons,onto,1997,LQNQ97482700391473,normal,hybrid,6,1,False
+3,0-48641,"Barrera, Scott and Berry",glass,2023,NGNS01152437385715,normal,diesel,6,0,True
+4,54I BM5,Hamilton and Sons,idea,1994,JRKL15355521277927,high,diesel,6,2,False
+5,7OP 073,Goodman-Jackson,baby,2004,SGSU76460258884061,high,diesel,3,1,True

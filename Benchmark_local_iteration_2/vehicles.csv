@@ -1,3 +1,0 @@
-vehicle_id,licence_plate_num,manufacturer,model,manifacture_year,car_policy_num,car_type,fuel,seats_num,kids_seats_num,wheelchair_seat
-1,KBI1169,"Gardner, Johnson and Lewis",me,2015,NGKX45578546131756,normal,hybrid,6,0,True
-2,KRJ 338,Brewer-Cole,American,1994,FCLA75692534319116,normal,electric,5,1,False

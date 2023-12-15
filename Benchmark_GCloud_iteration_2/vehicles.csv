@@ -1,3 +1,0 @@
-vehicle_id,licence_plate_num,manufacturer,model,manifacture_year,car_policy_num,car_type,fuel,seats_num,kids_seats_num,wheelchair_seat
-1,AO-7811,"Green, Wells and Long",their,2005,DLGX31688437815593,normal,diesel,3,1,True
-2,432 FLB,Woods LLC,third,2003,PYIK80867462272911,normal,diesel,3,2,False

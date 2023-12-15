@@ -1,0 +1,6 @@
+create_database,0.281152042
+push_to_db_from_csv_users,0.26448737499999986
+push_to_db_from_csv_vehicles,0.25894150000000016
+push_to_db_from_csv_drivers,0.26000395900000006
+push_to_db_from_csv_payments,0.264009959
+push_to_db_from_csv_rides,133.6177195

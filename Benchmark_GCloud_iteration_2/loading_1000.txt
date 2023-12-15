@@ -1,6 +1,0 @@
-create_database,0.17106904100000975
-push_to_db_from_csv,1.0636781660000452
-push_to_db_from_csv,0.5661498340000435
-push_to_db_from_csv,0.9147049580001294
-push_to_db_from_csv,1.4652441250000265
-push_to_db_from_csv,12942.208550292
