@@ -1,50 +1,34 @@
-# ADB_Project
+# Benchmarking Cloud Databases: Microsoft Azure vs. Google Cloud
 
-Project Contributors: 
-Simon Coessens, Valerio Rocca, Ludovica Caiola, Maria Camila Salazar
+## Overview
 
-Project Structure 
+This project, conducted as part of the Advanced Database course (INFO-H415) at ULB, benchmarks cloud database services from Microsoft Azure and Google Cloud, focusing on PostgreSQL deployments. The analysis includes setup, execution, and results for performance testing using a business case dataset (Taxi Lecco) and standardized benchmarks (TPROC-C).
 
-```
-├── 1.Data_generation
-├── 2.\ SQL_files
-├── 3.Testing_files
-├── 4.Project_Benchmarking_Files
-│   ├── Benchmark_Azure_iteration
-│   │   ├── SF=1
-│   │   ├── SF=10
-│   │   ├── SF=100
-│   │   └── SF=1000
-│   ├── Benchmark_GCloud_iteration
-│   ├── Benchmark_local_iteration
-│   └── README.md
-├── 5.TPROC_C
-├── 6.Analysis
-│   ├── Azure_data
-│   ├── Google_data
-│   ├── Local_data
-│   ├── analyse.py
-│   ├── average.py
-│   ├── exports
-│   └── loading_times.py
-├── Project_explanation.md
-└── Project_organisation.md
-```
+<div align="center">
+    <img src="https://actus.ulb.be/medias/photo/logo-universite-libre-bruxelles_1661952138925-png?ID_FICHE=19524" alt="ULB Logo" width="300"/>
+</div>
 
-1. Data_generation
-	- Contains the data generation files
-2. SQL_files 
-	- Contains the files for creating the database and some sql queries
-3.Testing_files
-	- Some testing Files
-4. Project_Benchmarking_Files
-	- Results from running our self-created Project Benchmark
-	- For GCloud, Azure, Local
-5. TPROC_C
-	- The results from the TPROC-C benchmark
-6. Analysis
-	- Code to analyse the results
+## Project Structure
 
-	
+1. **Introduction**: Background, objectives, and scope.
+2. **Technologies**: Overview of PostgreSQL and cloud computing fundamentals.
+3. **Cloud Platforms**: Comparison of Azure Database for PostgreSQL - Flexible Server and Google Cloud SQL.
+4. **Benchmarking**: Configuration, execution, and analysis of the benchmarks.
+5. **Results and Discussion**: Performance metrics, transaction analysis, and cost evaluation.
 
+## Key Findings
 
+- **Performance**: Differences observed in transaction processing efficiency between Azure and Google Cloud.
+- **Cost**: Analysis of the cost-performance ratio for both platforms.
+- **Future Work**: Suggestions for further research and optimization.
+
+## Team Members
+
+- Ludovica Caiola
+- Simon Coessens
+- Valerio Rocca
+- Maria Salazar
+
+## Course Information
+
+Advanced Database (INFO-H415) - ULB, December 2023
